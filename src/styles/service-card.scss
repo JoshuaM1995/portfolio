@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: inset 1px 1px 1px 2px #0f1523;
+  border-radius: 2px;
 
   .icon {
     background: #080e1c;
