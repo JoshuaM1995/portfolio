@@ -1,0 +1,30 @@
+.service-card {
+  height: 250px;
+  background: #101724;
+  border: 1px solid #1b2230;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .icon {
+    background: #080e1c;
+    width: 75px;
+    height: 75px;
+    border: 1px solid #2c3340;
+    border-radius: 75px;
+    margin-bottom: 1.8rem;
+  }
+
+  .title {
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
+
+  .information {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    color: #848a9d;
+  }
+}

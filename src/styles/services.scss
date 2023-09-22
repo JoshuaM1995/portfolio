@@ -1,0 +1,14 @@
+#services {
+  background: #0a111e;
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    margin-top: 2rem;
+  }
+}
