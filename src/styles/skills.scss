@@ -4,4 +4,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  #skills-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+
+    #skills-information {
+      width: 50%;
+
+      .title {
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-bottom: 1.5rem;
+      }
+
+      .description {
+        color: #838a9a;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+
+        &:not(last-child) {
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+
+    #skills-progress {
+      width: 50%;
+      padding: 0 2rem;
+    }
+  }
 }

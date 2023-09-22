@@ -1,8 +1,45 @@
 ---
 import "../styles/skills.scss";
+import ProgressBar from "./ProgressBar.astro";
 import TitleUnderlined from "./TitleUnderlined.astro";
 ---
 
 <section id="skills">
   <TitleUnderlined>My Skills</TitleUnderlined>
+
+  <div id="skills-container">
+    <div id="skills-information">
+      <h2 class="title">
+        All the skills that I have in that field of work are mentioned.
+      </h2>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores.
+      </p>
+      <p class="description">
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+        diam nonumy eirmod tempor invidunt.
+      </p>
+      <p class="description">
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+        diam nonumy eirmod tempor invidunt. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+        amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt.
+      </p>
+    </div>
+
+    <div id="skills-progress">
+      <ProgressBar label="HTML & CSS" value={90} />
+      <ProgressBar label="JavaScript/TypeScript" value={80} />
+      <ProgressBar label="React" value={80} />
+      <ProgressBar label="React Native" value={60} />
+      <ProgressBar label="Node.Js" value={70} />
+      <ProgressBar label="SQL (Postgres)" value={60} />
+      <ProgressBar label="Docker" value={50} />
+    </div>
+  </div>
 </section>

@@ -1,0 +1,38 @@
+.progress-container {
+  &:not(last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  position: relative;
+
+  progress.progress-bar {
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-color: #252f3a;
+
+    &::-webkit-progress-bar {
+      background-color: #48525d;
+    }
+
+    &::-webkit-progress-value,
+    &::-moz-progress-bar {
+      background-color: #4095a4;
+    }
+  }
+
+  .percentage {
+    color: #4095a4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+}

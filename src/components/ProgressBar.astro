@@ -1,0 +1,17 @@
+---
+import "../styles/progress-bar.scss";
+
+interface Props {
+  value: number;
+  label: string;
+}
+
+const { value, label } = Astro.props;
+---
+
+<div class="progress-container">
+  <label for="photoshop-progress">{label}</label>
+  <progress id="photoshop-progress" class="progress-bar" value={value} max="100"
+  ></progress>
+  <span class="percentage">{value}%</span>
+</div>
