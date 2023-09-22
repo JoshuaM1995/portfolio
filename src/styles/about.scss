@@ -1,4 +1,74 @@
 #about {
   background: #0a111e;
-  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10rem;
+  padding-right: 10rem;
+
+  .content {
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+
+    .profile-picture {
+      width: 50%;
+
+      img {
+        // width: 95%;
+        // height: 95%;
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    .about-me {
+      width: 50%;
+      margin-left: 3rem;
+      padding: 1rem 0;
+
+      .title {
+        font-weight: 500;
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      .subtitle {
+        color: #479da2;
+        font-weight: 300;
+        font-size: 1.3rem;
+      }
+
+      .biography,
+      .info {
+        color: #8f95a5;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        font-weight: 300;
+        width: 85%;
+      }
+
+      #info-sections {
+        margin-top: 1rem;
+
+        .info {
+          display: flex;
+          line-height: 2.2rem;
+
+          & p:first-child {
+            width: 100px;
+          }
+
+          & p:last-child:before {
+            content: ":";
+            margin-right: 0.8rem;
+          }
+        }
+      }
+
+      button {
+        margin-top: 2rem;
+      }
+    }
+  }
 }

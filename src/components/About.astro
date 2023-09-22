@@ -1,8 +1,63 @@
 ---
+import { Image } from "astro:assets";
 import TitleUnderlined from "./TitleUnderlined.astro";
 import "../styles/about.scss";
+import profilePicture from "../images/me.jpeg";
 ---
 
 <section id="about">
   <TitleUnderlined>About Me</TitleUnderlined>
+
+  <div class="content">
+    <div class="profile-picture">
+      <Image
+        class="profile-picture"
+        src={profilePicture}
+        alt="Picture of Joshua McNabb"
+      />
+    </div>
+
+    <div class="about-me">
+      <h2 class="title">Hi There! I'm Joshua McNabb</h2>
+      <h3 class="subtitle">Full-Stack Software Developer</h3>
+      <p class="biography">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        voluptatum, quibusdam, quia, quos voluptates voluptatem quod
+        exercitationem voluptatibus quas doloribus quidem.
+      </p>
+
+      <div id="info-sections">
+        <div class="info">
+          <p>Birthday</p>
+          <p>January 27, 1995</p>
+        </div>
+        <div class="info">
+          <p>Phone</p>
+          <p><a href="tel:7803858977">(780) 385-8977</a></p>
+        </div>
+        <div class="info">
+          <p>Email</p>
+          <p>
+            <a href="mailto:joshuamcnabb1995@gmail.com"
+              >joshuamcnabb1995@gmail.com</a
+            >
+          </p>
+        </div>
+        <div class="info">
+          <p>From</p>
+          <p>Calgary, AB</p>
+        </div>
+        <div class="info">
+          <p>Language</p>
+          <p>English</p>
+        </div>
+        <div class="info">
+          <p>Work Status</p>
+          <p>Available</p>
+        </div>
+      </div>
+
+      <button>Download Resume</button>
+    </div>
+  </div>
 </section>
