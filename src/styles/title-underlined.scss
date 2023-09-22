@@ -1,0 +1,30 @@
+.title-underlined {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  max-width: 300px;
+
+  h2 {
+    color: #298eae;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.4rem;
+    width: 85%;
+    text-align: center;
+  }
+
+  .underline {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      #424956 0%,
+      #424956 33%,
+      #4699ad 33%,
+      #4699ad 66%,
+      #424956 66%,
+      #424956 100%
+    );
+  }
+}

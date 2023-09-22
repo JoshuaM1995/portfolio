@@ -1,9 +1,9 @@
 header#top-navigation {
   display: flex;
   align-items: center;
-  background: #070B1A;
+  background: #070b1a;
   height: 60px;
-  padding: 0 8rem;
+  padding: 0 10rem;
 
   .logo {
     margin-right: 6rem;
@@ -28,7 +28,8 @@ header#top-navigation {
         margin: 0 16px;
         font-size: 0.8rem;
 
-        &.active, &:hover {
+        &.active,
+        &:hover {
           color: #237186;
         }
       }
