@@ -1,0 +1,26 @@
+main {
+  background: #060D1B;
+  display: flex;
+  align-items: center;
+  padding: 20rem 8rem;
+  width: 100%;
+
+  .hello {
+    color: #237186;
+    font-weight: 300;
+    font-size: 1.6rem;
+  }
+
+  .first-name, .last-name {
+    font-size: 4rem;
+    white-space: pre-line;
+    text-wrap: break-word;
+    line-height: 2.5rem;
+  }
+
+  .title {
+    color: #ACB3C0;
+    font-weight: 300;
+    font-size: 1.8rem;
+  }
+}
