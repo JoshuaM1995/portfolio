@@ -1,5 +1,7 @@
 ---
 import "../styles/contact.scss";
+import CircleIcon from "./CircleIcon.astro";
+import ContactCard from "./ContactCard.astro";
 import TitleUnderlined from "./TitleUnderlined.astro";
 ---
 
@@ -7,7 +9,7 @@ import TitleUnderlined from "./TitleUnderlined.astro";
   <TitleUnderlined width={200}>Contact Me</TitleUnderlined>
 
   <div id="contact-container">
-    <div>
+    <div class="contact-inner">
       <h3 class="title">Say Hello</h3>
 
       <div id="contact-form">
@@ -19,12 +21,30 @@ import TitleUnderlined from "./TitleUnderlined.astro";
       </div>
     </div>
 
-    <div id="contact-info">
+    <div id="contact-info" class="contact-inner">
       <h3 class="title">Contact Info</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
+
+      <div id="contact-cards">
+        <ContactCard
+          icon="envelope"
+          title="Email"
+          lineOne="info@joshuamcnabb.ca"
+        />
+        <ContactCard icon="phone" title="Phone" lineOne="(780) 385-8977" />
+        <ContactCard
+          icon="location-dot"
+          title="Address"
+          lineOne="Calgary, Canada"
+        />
+      </div>
+
+      <p class="visit-social-media">Visit my social media and get connected</p>
+
+      <CircleIcon icon="phone" text="Behance" iconSize="md" />
     </div>
   </div>
 </section>

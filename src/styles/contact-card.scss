@@ -1,0 +1,20 @@
+.contact-card {
+  display: flex;
+  align-items: center;
+
+  &:not(last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  .icon {
+    margin-right: 1.3rem;
+  }
+
+  .content {
+    .title {
+      margin: 0 0 0.3rem 0 !important;
+      font-size: 1.1rem !important;
+      font-weight: normal !important;
+    }
+  }
+}

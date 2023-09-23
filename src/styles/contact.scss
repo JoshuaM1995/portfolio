@@ -10,12 +10,12 @@
     margin-top: 2rem;
     width: 100%;
 
-    & div {
+    .contact-inner {
+      width: 50%;
+
       &:first-child {
         margin-right: 2rem;
       }
-
-      width: 50%;
 
       .title {
         font-size: 2rem;
@@ -34,11 +34,22 @@
     }
 
     #contact-info {
+      #contact-cards {
+        width: 100%;
+        margin-top: 1.3rem;
+      }
+
       p {
         color: #9ba4b1;
         font-size: 0.9rem;
         font-weight: lighter;
         line-height: 1.5rem;
+      }
+
+      .visit-social-media {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
       }
     }
   }

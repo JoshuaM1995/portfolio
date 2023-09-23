@@ -1,0 +1,16 @@
+---
+import "../styles/circle-icon.scss";
+
+interface Props {
+  icon: string;
+  text?: string;
+  iconSize?: string;
+}
+
+const { icon, text, iconSize = "sm" } = Astro.props;
+---
+
+<div class="icon" data-has-text={!!text ? "true" : "false"}>
+  <i class={`fa-solid fa-${iconSize} fa-${icon}`}></i>
+  {text && <span class="icon-text">{text}</span>}
+</div>

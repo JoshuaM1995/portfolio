@@ -1,0 +1,21 @@
+---
+import "../styles/contact-card.scss";
+import CircleIcon from "./CircleIcon.astro";
+
+interface Props {
+  icon: string;
+  title: string;
+  lineOne: string;
+}
+
+const { icon, title, lineOne } = Astro.props;
+---
+
+<div class="contact-card">
+  <CircleIcon icon={icon} />
+
+  <div class="content">
+    <h5 class="title">{title}</h5>
+    <p class="body">{lineOne}</p>
+  </div>
+</div>

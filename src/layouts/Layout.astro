@@ -113,7 +113,7 @@ const { title } = Astro.props;
     width: 100%;
     padding: 0.8rem 1rem;
     border: 1px solid #1a212f;
-    border-radius: 3px;
+    border-radius: 4px;
 
     &::placeholder {
       color: #353c49;
@@ -121,6 +121,11 @@ const { title } = Astro.props;
 
     &:not(last-child) {
       margin-bottom: 1rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #353c49;
     }
   }
 </style>
