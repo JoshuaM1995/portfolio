@@ -38,11 +38,17 @@ header#top-navigation {
 
   .separator {
     width: 1px;
-    height: 20px;
+    height: 10px;
     border-right: 1px solid #fff;
+    margin: 0 2rem;
   }
 
   .contact {
     display: flex;
+    align-items: center;
+
+    i {
+      margin-right: 0.8rem;
+    }
   }
 }
