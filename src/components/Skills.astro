@@ -33,13 +33,17 @@ import TitleUnderlined from "./TitleUnderlined.astro";
     </div>
 
     <div id="skills-progress">
-      <ProgressBar label="HTML & CSS" value={90} />
-      <ProgressBar label="JavaScript/TypeScript" value={80} />
-      <ProgressBar label="React" value={80} />
-      <ProgressBar label="React Native" value={60} />
-      <ProgressBar label="Node.Js" value={70} />
-      <ProgressBar label="SQL (Postgres)" value={60} />
-      <ProgressBar label="Docker" value={50} />
+      <ProgressBar id="html-css" label="HTML & CSS" value={90} />
+      <ProgressBar
+        id="javascript-typescript"
+        label="JavaScript/TypeScript"
+        value={80}
+      />
+      <ProgressBar id="react" label="React" value={80} />
+      <ProgressBar id="react-native" label="React Native" value={60} />
+      <ProgressBar id="node-js" label="Node.Js" value={70} />
+      <ProgressBar id="sql-postgres" label="SQL (Postgres)" value={60} />
+      <ProgressBar id="docker" label="Docker" value={50} />
     </div>
   </div>
 </section>
