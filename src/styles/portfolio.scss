@@ -1,0 +1,27 @@
+#portfolio {
+  background: #0a111e;
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #portfolio-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+
+    .portfolio-card {
+      color: #fff;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 250px;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  }
+}
