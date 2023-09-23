@@ -86,6 +86,7 @@ const { title } = Astro.props;
   h4,
   h5,
   h6 {
+    color: #fcfffe;
     font-weight: bolder;
   }
 
@@ -103,5 +104,23 @@ const { title } = Astro.props;
     display: flex;
     justify-content: center;
     padding: 4rem 0;
+  }
+
+  input,
+  textarea {
+    color: #fff;
+    background: #101724;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #1a212f;
+    border-radius: 3px;
+
+    &::placeholder {
+      color: #353c49;
+    }
+
+    &:not(last-child) {
+      margin-bottom: 1rem;
+    }
   }
 </style>

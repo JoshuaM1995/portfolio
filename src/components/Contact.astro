@@ -6,7 +6,25 @@ import TitleUnderlined from "./TitleUnderlined.astro";
 <section id="contact">
   <TitleUnderlined width={200}>Contact Me</TitleUnderlined>
 
-  <div id="contact-cotnainer">
-    <h2>Hello</h2>
+  <div id="contact-container">
+    <div>
+      <h3 class="title">Say Hello</h3>
+
+      <div id="contact-form">
+        <input placeholder="Your Name" />
+        <input placeholder="Your Email" />
+        <input placeholder="Your Subject" />
+        <textarea placeholder="Your Message" rows={6}></textarea>
+        <button>Send Message</button>
+      </div>
+    </div>
+
+    <div id="contact-info">
+      <h3 class="title">Contact Info</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </div>
   </div>
 </section>

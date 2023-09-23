@@ -6,6 +6,40 @@
   align-items: center;
 
   #contact-container {
+    display: flex;
     margin-top: 2rem;
+    width: 100%;
+
+    & div {
+      &:first-child {
+        margin-right: 2rem;
+      }
+
+      width: 50%;
+
+      .title {
+        font-size: 2rem;
+        font-weight: 300;
+        color: #fff;
+        margin-bottom: 1.2rem;
+      }
+
+      #contact-form {
+        width: 90%;
+
+        button {
+          margin-top: 0.3rem;
+        }
+      }
+    }
+
+    #contact-info {
+      p {
+        color: #9ba4b1;
+        font-size: 0.9rem;
+        font-weight: lighter;
+        line-height: 1.5rem;
+      }
+    }
   }
 }
