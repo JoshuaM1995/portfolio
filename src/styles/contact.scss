@@ -51,6 +51,35 @@
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
+
+      .social-icons {
+        display: flex;
+
+        .circle-icon:not(last-child) {
+          margin-right: 1rem;
+        }
+
+        .circle-icon {
+          cursor: pointer;
+
+          &.github:hover {
+            background: #1b1f23;
+          }
+
+          &.linkedin:hover {
+            background: #0077b5;
+          }
+
+          &:hover i {
+            color: #fff;
+          }
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

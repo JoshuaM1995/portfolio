@@ -1,4 +1,4 @@
-.icon {
+.circle-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,10 +10,13 @@
   &[data-has-text="true"] {
     justify-content: flex-start;
     padding-left: 1rem;
+    min-width: 45px; /* Set a minimum width */
+    padding-right: 1rem;
 
-    span {
+    .icon-text {
       margin-left: 1rem;
       font-weight: light;
+      flex: 1;
     }
   }
 
