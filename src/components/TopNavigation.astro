@@ -10,11 +10,11 @@ import "../styles/top-navigation.scss";
   <div class="top-navigation-right">
     <nav>
       <ul>
-        <li><a href="#" id="home-menu-item">Home</a></li>
-        <li><a href="#" id="about-menu-item">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a id="home-menu-item" href="#">Home</a></li>
+        <li><a id="about-menu-item" href="#">About</a></li>
+        <li><a id="skills-menu-item" href="#">Skills</a></li>
+        <li><a id="portfolio-menu-item" href="#">Portfolio</a></li>
+        <li><a id="contact-menu-item" href="#">Contact</a></li>
       </ul>
     </nav>
 
@@ -30,13 +30,50 @@ import "../styles/top-navigation.scss";
 <script lang="ts">
 const homeMenuItem = document.getElementById("home-menu-item");
 const aboutMenuItem = document.getElementById("about-menu-item");
+const skillsMenuItem = document.getElementById("skills-menu-item");
+const portfolioMenuItem = document.getElementById("portfolio-menu-item");
+const contactMenuItem = document.getElementById("contact-menu-item");
+const yOffset = -60;
 
-homeMenuItem.addEventListener("click", () => {
+homeMenuItem.addEventListener("click", (e) => {
+  e.preventDefault();
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-aboutMenuItem.addEventListener("click", () => {
+aboutMenuItem.addEventListener("click", (e) => {
+  e.preventDefault();
+
   const aboutElement = document.getElementById("about");
-  aboutElement.scrollIntoView({ behavior: "smooth" });
+  const y =
+    aboutElement.getBoundingClientRect().top + window.scrollY + yOffset;
+  window.scrollTo({ behavior: "smooth", top: y });
+});
+
+skillsMenuItem.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const skillsElement = document.getElementById("skills");
+  const y =
+    skillsElement.getBoundingClientRect().top + window.scrollY + yOffset;
+  window.scrollTo({ behavior: "smooth", top: y });
+});
+
+portfolioMenuItem.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const portfolioElement = document.getElementById("portfolio");
+  const y =
+    portfolioElement.getBoundingClientRect().top + window.scrollY + yOffset;
+  window.scrollTo({ behavior: "smooth", top: y });
+});
+
+contactMenuItem.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const contactElement = document.getElementById("contact");
+  const y =
+    contactElement.getBoundingClientRect().top + window.scrollY + yOffset;
+  window.scrollTo({ behavior: "smooth", top: y });
 });
 </script>
