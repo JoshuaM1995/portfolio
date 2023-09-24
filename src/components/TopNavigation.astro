@@ -10,8 +10,8 @@ import "../styles/top-navigation.scss";
   <div class="top-navigation-right">
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#" id="home-menu-item">Home</a></li>
+        <li><a href="#" id="about-menu-item">About</a></li>
         <li><a href="#">Skills</a></li>
         <li><a href="#">Portfolio</a></li>
         <li><a href="#">Contact</a></li>
@@ -26,3 +26,17 @@ import "../styles/top-navigation.scss";
     </div>
   </div>
 </header>
+
+<script lang="ts">
+const homeMenuItem = document.getElementById("home-menu-item");
+const aboutMenuItem = document.getElementById("about-menu-item");
+
+homeMenuItem.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+aboutMenuItem.addEventListener("click", () => {
+  const aboutElement = document.getElementById("about");
+  aboutElement.scrollIntoView({ behavior: "smooth" });
+});
+</script>
