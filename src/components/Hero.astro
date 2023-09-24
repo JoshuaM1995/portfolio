@@ -11,7 +11,10 @@ import profilePicture from "../images/me.jpeg";
     <h1 class="first-name">Joshua</h1>
     <h1 class="last-name">McNabb</h1>
     <h2 id="typeit" class="title"></h2>
-    <button>Hire Me</button>
+
+    <a href="mailto:info@joshuamcnabb.ca?subject=Job Inquiry via Website">
+      <button id="hire-me">Hire Me</button>
+    </a>
   </div>
 
   <div class="hero-right">
@@ -1636,3 +1639,10 @@ new TypeIt("#typeit", {
   .type("Thrill-Seeking Longboarder")
   .go();
 </script>
+<!-- <script>
+  const hireMeButton = document.getElementById("hire-me");
+
+  hireMeButton.addEventListener("click", () => {
+    window.open("mailto:joshuamcnabb1995@gmail.com");
+  });
+</script> -->
