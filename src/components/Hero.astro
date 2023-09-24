@@ -1625,20 +1625,19 @@ particlesJS.load("particles-js", "/particles.json");
 <script is:inline>
 new TypeIt("#typeit", {
   speed: 100,
-  loop: false,
-  strings: "Full-Stack Software Developer",
-}).go();
-// .type("Full-Stack Software Developer")
-// .pause(1000)
-// .delete(29)
-// .type("Avid Music Fan")
-// .pause(1000)
-// .delete(14)
-// .type("Casual Gamer")
-// .pause(1000)
-// .delete(12)
-// .type("Thrill-Seeking Longboarder")
-// .go();
+  loop: true,
+})
+  .type("Full-Stack Software Developer")
+  .pause(1000)
+  .delete(29)
+  .type("Avid Music Fan")
+  .pause(1000)
+  .delete(14)
+  .type("Casual Gamer")
+  .pause(1000)
+  .delete(12)
+  .type("Thrill-Seeking Longboarder")
+  .go();
 </script>
 <!-- <script>
   const hireMeButton = document.getElementById("hire-me");
