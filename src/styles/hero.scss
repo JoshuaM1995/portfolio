@@ -25,13 +25,17 @@ main {
     font-size: 1.6rem;
   }
 
+  .first-name {
+    margin-top: 4rem;
+  }
+
   .first-name,
   .last-name {
     font-size: 7rem;
     white-space: pre-line;
     text-wrap: break-word;
     line-height: 2.5rem;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .title {

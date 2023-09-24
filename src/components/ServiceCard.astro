@@ -5,13 +5,14 @@ import CircleIcon from "./CircleIcon.astro";
 interface Props {
   title: string;
   icon: string;
+  iconVariant?: "solid" | "brands";
 }
 
-const { title, icon } = Astro.props;
+const { title, icon, iconVariant } = Astro.props;
 ---
 
 <div class="service-card">
-  <CircleIcon icon={icon} />
+  <CircleIcon icon={icon} iconVariant={iconVariant} iconSize="2xl" />
   <h3 class="title">{title}</h3>
   <p class="information"><slot /></p>
 </div>
