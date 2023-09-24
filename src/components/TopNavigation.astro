@@ -10,12 +10,26 @@ import "../styles/top-navigation.scss";
   <div class="top-navigation-right">
     <nav>
       <ul>
-        <li><a id="home-menu-item" href="#" class="active">Home</a></li>
-        <li><a id="about-menu-item" href="#">About</a></li>
-        <li><a id="services-menu-item" href="#">Services</a></li>
-        <li><a id="skills-menu-item" href="#">Skills</a></li>
-        <li><a id="portfolio-menu-item" href="#">Portfolio</a></li>
-        <li><a id="contact-menu-item" href="#">Contact</a></li>
+        <li>
+          <a class="menu-item" href="#" class="active" data-section="home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a class="menu-item" href="#" data-section="about">About</a>
+        </li>
+        <li>
+          <a class="menu-item" href="#" data-section="services">Services</a>
+        </li>
+        <li>
+          <a class="menu-item" href="#" data-section="skills">Skills</a>
+        </li>
+        <li>
+          <a class="menu-item" href="#" data-section="portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a class="menu-item" href="#" data-section="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
@@ -29,27 +43,20 @@ import "../styles/top-navigation.scss";
 </header>
 
 <script>
-  const homeMenuItem = document.getElementById("home-menu-item");
-  const aboutMenuItem = document.getElementById("about-menu-item");
-  const servicesMenuItem = document.getElementById("services-menu-item");
-  const skillsMenuItem = document.getElementById("skills-menu-item");
-  const portfolioMenuItem = document.getElementById("portfolio-menu-item");
-  const contactMenuItem = document.getElementById("contact-menu-item");
+  const menuItems = document.querySelectorAll(".menu-item");
   const yOffset = -59;
 
+  // Set the "Home" menu item as active by default
+  const homeMenuItem = document.querySelector('[data-section="home"]');
+  homeMenuItem.classList.add("active");
+
   const resetActiveStates = () => {
-    homeMenuItem.classList.remove("active");
-    aboutMenuItem.classList.remove("active");
-    servicesMenuItem.classList.remove("active");
-    skillsMenuItem.classList.remove("active");
-    portfolioMenuItem.classList.remove("active");
-    contactMenuItem.classList.remove("active");
+    menuItems.forEach((menuItem) => {
+      menuItem.classList.remove("active");
+    });
   };
 
-  const scrollToSectionOnMenuItemClick = (
-    menuItem: HTMLElement,
-    sectionId: string
-  ) => {
+  const scrollToSectionOnMenuItemClick = (menuItem, sectionId) => {
     menuItem.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -63,17 +70,8 @@ import "../styles/top-navigation.scss";
     });
   };
 
-  scrollToSectionOnMenuItemClick(homeMenuItem, "home");
-  scrollToSectionOnMenuItemClick(aboutMenuItem, "about");
-  scrollToSectionOnMenuItemClick(servicesMenuItem, "services");
-  scrollToSectionOnMenuItemClick(skillsMenuItem, "skills");
-  scrollToSectionOnMenuItemClick(portfolioMenuItem, "portfolio");
-  scrollToSectionOnMenuItemClick(contactMenuItem, "contact");
-
-  // makeSectionActive("home-menu-item", "home");
-  // makeSectionActive("about-menu-item", "about");
-  // makeSectionActive("services-menu-item", "services");
-  // makeSectionActive("skills-menu-item", "skills");
-  // makeSectionActive("portfolio-menu-item", "portfolio");
-  // makeSectionActive("contact-menu-item", "contact");
+  menuItems.forEach((menuItem) => {
+    const sectionId = menuItem.getAttribute("data-section");
+    scrollToSectionOnMenuItemClick(menuItem, sectionId);
+  });
 </script>
