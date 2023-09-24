@@ -10,8 +10,9 @@ import "../styles/top-navigation.scss";
   <div class="top-navigation-right">
     <nav>
       <ul>
-        <li><a id="home-menu-item" href="#">Home</a></li>
+        <li><a id="home-menu-item" href="#" class="active">Home</a></li>
         <li><a id="about-menu-item" href="#">About</a></li>
+        <li><a id="services-menu-item" href="#">Services</a></li>
         <li><a id="skills-menu-item" href="#">Skills</a></li>
         <li><a id="portfolio-menu-item" href="#">Portfolio</a></li>
         <li><a id="contact-menu-item" href="#">Contact</a></li>
@@ -27,53 +28,52 @@ import "../styles/top-navigation.scss";
   </div>
 </header>
 
-<script lang="ts">
-const homeMenuItem = document.getElementById("home-menu-item");
-const aboutMenuItem = document.getElementById("about-menu-item");
-const skillsMenuItem = document.getElementById("skills-menu-item");
-const portfolioMenuItem = document.getElementById("portfolio-menu-item");
-const contactMenuItem = document.getElementById("contact-menu-item");
-const yOffset = -60;
+<script>
+  const homeMenuItem = document.getElementById("home-menu-item");
+  const aboutMenuItem = document.getElementById("about-menu-item");
+  const servicesMenuItem = document.getElementById("services-menu-item");
+  const skillsMenuItem = document.getElementById("skills-menu-item");
+  const portfolioMenuItem = document.getElementById("portfolio-menu-item");
+  const contactMenuItem = document.getElementById("contact-menu-item");
+  const yOffset = -59;
 
-homeMenuItem.addEventListener("click", (e) => {
-  e.preventDefault();
+  const resetActiveStates = () => {
+    homeMenuItem.classList.remove("active");
+    aboutMenuItem.classList.remove("active");
+    servicesMenuItem.classList.remove("active");
+    skillsMenuItem.classList.remove("active");
+    portfolioMenuItem.classList.remove("active");
+    contactMenuItem.classList.remove("active");
+  };
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  const scrollToSectionOnMenuItemClick = (
+    menuItem: HTMLElement,
+    sectionId: string
+  ) => {
+    menuItem.addEventListener("click", (e) => {
+      e.preventDefault();
 
-aboutMenuItem.addEventListener("click", (e) => {
-  e.preventDefault();
+      const sectionElement = document.getElementById(sectionId);
+      const y =
+        sectionElement.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ behavior: "smooth", top: y });
 
-  const aboutElement = document.getElementById("about");
-  const y =
-    aboutElement.getBoundingClientRect().top + window.scrollY + yOffset;
-  window.scrollTo({ behavior: "smooth", top: y });
-});
+      resetActiveStates();
+      menuItem.classList.add("active");
+    });
+  };
 
-skillsMenuItem.addEventListener("click", (e) => {
-  e.preventDefault();
+  scrollToSectionOnMenuItemClick(homeMenuItem, "home");
+  scrollToSectionOnMenuItemClick(aboutMenuItem, "about");
+  scrollToSectionOnMenuItemClick(servicesMenuItem, "services");
+  scrollToSectionOnMenuItemClick(skillsMenuItem, "skills");
+  scrollToSectionOnMenuItemClick(portfolioMenuItem, "portfolio");
+  scrollToSectionOnMenuItemClick(contactMenuItem, "contact");
 
-  const skillsElement = document.getElementById("skills");
-  const y =
-    skillsElement.getBoundingClientRect().top + window.scrollY + yOffset;
-  window.scrollTo({ behavior: "smooth", top: y });
-});
-
-portfolioMenuItem.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const portfolioElement = document.getElementById("portfolio");
-  const y =
-    portfolioElement.getBoundingClientRect().top + window.scrollY + yOffset;
-  window.scrollTo({ behavior: "smooth", top: y });
-});
-
-contactMenuItem.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const contactElement = document.getElementById("contact");
-  const y =
-    contactElement.getBoundingClientRect().top + window.scrollY + yOffset;
-  window.scrollTo({ behavior: "smooth", top: y });
-});
+  // makeSectionActive("home-menu-item", "home");
+  // makeSectionActive("about-menu-item", "about");
+  // makeSectionActive("services-menu-item", "services");
+  // makeSectionActive("skills-menu-item", "skills");
+  // makeSectionActive("portfolio-menu-item", "portfolio");
+  // makeSectionActive("contact-menu-item", "contact");
 </script>
