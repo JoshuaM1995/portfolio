@@ -46,14 +46,16 @@ import "../styles/top-navigation.scss";
   const menuItems = document.querySelectorAll(".menu-item");
   const yOffset = -59;
 
-  // Set the "Home" menu item as active by default
-  const homeMenuItem = document.querySelector('[data-section="home"]');
-  homeMenuItem.classList.add("active");
-
   const resetActiveStates = () => {
     menuItems.forEach((menuItem) => {
       menuItem.classList.remove("active");
     });
+  };
+
+  // Helper function to add the "active" class to a menu item
+  const setActiveMenuItem = (menuItem) => {
+    resetActiveStates();
+    menuItem.classList.add("active");
   };
 
   const scrollToSectionOnMenuItemClick = (menuItem, sectionId) => {
@@ -65,13 +67,43 @@ import "../styles/top-navigation.scss";
         sectionElement.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ behavior: "smooth", top: y });
 
-      resetActiveStates();
-      menuItem.classList.add("active");
+      setActiveMenuItem(menuItem);
+    });
+  };
+
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
+  const updateActiveMenuItem = () => {
+    menuItems.forEach((menuItem) => {
+      const sectionId = menuItem.getAttribute("data-section");
+      const sectionElement = document.getElementById(sectionId);
+
+      if (sectionElement && isInViewport(sectionElement)) {
+        resetActiveStates();
+        menuItem.classList.add("active");
+      }
     });
   };
 
   menuItems.forEach((menuItem) => {
     const sectionId = menuItem.getAttribute("data-section");
     scrollToSectionOnMenuItemClick(menuItem, sectionId);
+  });
+
+  // Initial update of the active menu item
+  updateActiveMenuItem();
+
+  // Add scroll event listener to update the active menu item when scrolling
+  window.addEventListener("scroll", () => {
+    updateActiveMenuItem();
   });
 </script>
