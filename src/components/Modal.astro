@@ -1,0 +1,54 @@
+---
+import "../styles/modal.scss";
+
+interface Props {
+  id: string;
+  title?: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<div class="modal micromodal-slide" id={`modal-${id}`} aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div
+      class="modal__container"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-1-title"
+    >
+      <header class="modal__header">
+        {
+          title && (
+            <h2 class="modal__title" id="modal-1-title">
+              {title}
+            </h2>
+          )
+        }
+        <div class="modal__close__container">
+          <button
+            class="modal__close"
+            aria-label="Close modal"
+            data-micromodal-close></button>
+        </div>
+      </header>
+      <main class="modal__content" id="modal-1-content">
+        <slot />
+      </main>
+      <!-- <footer class="modal__footer">
+        <button class="modal__btn modal__btn-primary">Continue</button>
+        <button
+          class="modal__btn"
+          data-micromodal-close
+          aria-label="Close this dialog window">Close</button
+        >
+      </footer> -->
+    </div>
+  </div>
+</div>
+
+<script>
+  import MicroModal from "micromodal";
+
+  MicroModal.init();
+</script>

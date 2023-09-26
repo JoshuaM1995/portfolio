@@ -2,13 +2,14 @@
 import "../styles/portfolio-card.scss";
 
 interface Props {
+  id: string;
   backgroundImage: string;
 }
 
-const { backgroundImage } = Astro.props;
+const { id, backgroundImage } = Astro.props;
 ---
 
-<div class="card-image-box">
+<div id={id} class="card-image-box">
   <div class="portfolio-card" style={`background:url(${backgroundImage})`}>
     <div class="card-box-caption">
       <div class="card-content">

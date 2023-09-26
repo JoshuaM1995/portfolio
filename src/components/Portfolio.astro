@@ -1,21 +1,75 @@
 ---
 import "../styles/portfolio.scss";
+import Modal from "./Modal.astro";
 import PortfolioCard from "./PortfolioCard.astro";
 import TitleUnderlined from "./TitleUnderlined.astro";
+import { Image } from "astro:assets";
+// import spotalyticsScreenshot from '/images/';
 ---
 
 <section id="portfolio">
   <TitleUnderlined>Portfolio</TitleUnderlined>
 
   <div id="portfolio-cards">
-    <PortfolioCard backgroundImage="https://placekitten.com/g/500/300">
+    <PortfolioCard
+      id="portfolio-card-healthcare"
+      backgroundImage="https://placekitten.com/g/500/300"
+    >
       Healthcare Web/Mobile Application
     </PortfolioCard>
-    <PortfolioCard backgroundImage="https://placekitten.com/g/500/300">
+    <PortfolioCard
+      id="portfolio-card-oil-gas"
+      backgroundImage="https://placekitten.com/g/500/300"
+    >
       Oil & Gas Web Application
     </PortfolioCard>
-    <PortfolioCard backgroundImage="https://placekitten.com/g/500/300">
+    <PortfolioCard
+      id="portfolio-card-spotalytics"
+      backgroundImage="/images/projects/spotalytics.png"
+    >
       Spotalytics
     </PortfolioCard>
   </div>
 </section>
+
+<Modal id="spotalytics">
+  <Image
+    src="/images/projects/spotalytics.png"
+    alt="A bird."
+    width="500"
+    height="1000"
+  />
+  <h2>Spotalytics</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</Modal>
+
+<script>
+  import MicroModal from "micromodal";
+
+  const spotalyticsPortfolioCard = document.getElementById(
+    "portfolio-card-spotalytics"
+  );
+
+  const toggleModal = (elementId: string) => {
+    const modalElement = document.getElementById(`modal-${elementId}`);
+
+    const isOpen = modalElement.classList.contains("is-open");
+
+    if (isOpen) {
+      MicroModal.close(`modal-${elementId}`);
+    } else {
+      MicroModal.show(`modal-${elementId}`);
+    }
+  };
+
+  spotalyticsPortfolioCard.addEventListener("click", () => {
+    toggleModal("spotalytics");
+  });
+</script>

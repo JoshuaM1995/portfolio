@@ -14,7 +14,7 @@
   left: 0;
 }
 
-main {
+main:not(.modal__content) {
   display: flex;
   align-items: center;
   padding: 17.75rem 0 14rem 10rem;
