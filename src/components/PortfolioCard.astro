@@ -1,0 +1,21 @@
+---
+import "../styles/portfolio-card.scss";
+
+interface Props {
+  backgroundImage: string;
+}
+
+const { backgroundImage } = Astro.props;
+---
+
+<div class="card-image-box">
+  <div class="portfolio-card" style={`background:url(${backgroundImage})`}>
+    <div class="card-box-caption">
+      <div class="card-content">
+        <div class="card-title text-faded">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

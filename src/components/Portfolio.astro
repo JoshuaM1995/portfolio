@@ -1,5 +1,6 @@
 ---
 import "../styles/portfolio.scss";
+import PortfolioCard from "./PortfolioCard.astro";
 import TitleUnderlined from "./TitleUnderlined.astro";
 ---
 
@@ -7,11 +8,14 @@ import TitleUnderlined from "./TitleUnderlined.astro";
   <TitleUnderlined>Portfolio</TitleUnderlined>
 
   <div id="portfolio-cards">
-    <div class="portfolio-card">1</div>
-    <div class="portfolio-card">2</div>
-    <div class="portfolio-card">3</div>
-    <div class="portfolio-card">4</div>
-    <div class="portfolio-card">5</div>
-    <div class="portfolio-card">6</div>
+    <PortfolioCard backgroundImage="https://placekitten.com/g/500/300">
+      Healthcare Web/Mobile Application
+    </PortfolioCard>
+    <PortfolioCard backgroundImage="https://placekitten.com/g/500/300">
+      Oil & Gas Web Application
+    </PortfolioCard>
+    <PortfolioCard backgroundImage="https://placekitten.com/g/500/300">
+      Spotalytics
+    </PortfolioCard>
   </div>
 </section>

@@ -9,6 +9,7 @@ header#top-navigation {
   z-index: 2;
 
   .logo {
+    color: #fff;
     margin-right: 6rem;
     font-weight: bold;
     font-size: 1.2rem;
@@ -37,7 +38,7 @@ header#top-navigation {
 
         &.active,
         &:hover {
-          color: #237186;
+          color: #18a0bb;
         }
       }
     }
@@ -53,6 +54,7 @@ header#top-navigation {
   .contact {
     display: flex;
     align-items: center;
+    font-size: 0.9rem;
 
     i {
       margin-right: 0.8rem;
