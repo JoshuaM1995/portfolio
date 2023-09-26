@@ -9,7 +9,12 @@ interface Props {
 const { id, title } = Astro.props;
 ---
 
-<div class="modal micromodal-slide" id={`modal-${id}`} aria-hidden="true">
+<astro-modal
+  class="modal micromodal-slide"
+  id={`modal-${id}`}
+  aria-hidden="true"
+  data-id={id}
+>
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div
       class="modal__container"
@@ -35,20 +40,34 @@ const { id, title } = Astro.props;
       <main class="modal__content" id="modal-1-content">
         <slot />
       </main>
-      <!-- <footer class="modal__footer">
-        <button class="modal__btn modal__btn-primary">Continue</button>
-        <button
-          class="modal__btn"
-          data-micromodal-close
-          aria-label="Close this dialog window">Close</button
-        >
-      </footer> -->
     </div>
   </div>
-</div>
+</astro-modal>
 
 <script>
   import MicroModal from "micromodal";
 
   MicroModal.init();
+
+  class Modal extends HTMLElement {
+    constructor() {
+      super();
+
+      const id = this.dataset.id;
+
+      const htmlElement = document.getElementsByTagName("html")[0];
+      const modalOverlay = document.querySelector(".modal__overlay");
+      const modalClose = document.querySelector(".modal__close");
+
+      // Restore scrolling when modal is closed
+      modalOverlay.addEventListener("click", () => {
+        htmlElement.style.overflow = "auto";
+      });
+      modalClose.addEventListener("click", () => {
+        htmlElement.style.overflow = "auto";
+      });
+    }
+  }
+
+  customElements.define("astro-modal", Modal);
 </script>

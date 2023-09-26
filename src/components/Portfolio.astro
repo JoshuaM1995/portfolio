@@ -58,13 +58,15 @@ import { Image } from "astro:assets";
   );
 
   const toggleModal = (elementId: string) => {
+    const htmlElement = document.getElementsByTagName("html")[0];
     const modalElement = document.getElementById(`modal-${elementId}`);
-
     const isOpen = modalElement.classList.contains("is-open");
 
     if (isOpen) {
+      htmlElement.style.overflow = "auto";
       MicroModal.close(`modal-${elementId}`);
     } else {
+      htmlElement.style.overflow = "hidden";
       MicroModal.show(`modal-${elementId}`);
     }
   };

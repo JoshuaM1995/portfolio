@@ -52,6 +52,9 @@ devDependencies:
   '@types/micromodal':
     specifier: ^0.3.3
     version: 0.3.3
+  '@types/scroll-lock':
+    specifier: ^2.1.1
+    version: 2.1.1
 
 packages:
 
@@ -1037,6 +1040,10 @@ packages:
   /@types/resolve@1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: false
+
+  /@types/scroll-lock@2.1.1:
+    resolution: {integrity: sha512-g/FXYR7hltg7TXbbQsJ3rIkBtUt5GZPw5aF4SdLg7RDTEyfS+ia3oGIWmaX9zo5IOgRpOmi4Kh70XoNCN9XAmg==}
+    dev: true
 
   /@types/unist@2.0.8:
     resolution: {integrity: sha512-d0XxK3YTObnWVp6rZuev3c49+j4Lo8g4L1ZRm9z5L0xpoZycUPshHgczK5gsUMaZOstjVYYi09p5gYvUtfChYw==}
