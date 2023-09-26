@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^5.0.1
     version: 5.0.1(astro@3.1.2)
+  '@types/node':
+    specifier: ^18.18.0
+    version: 18.18.0
   '@vercel/analytics':
     specifier: ^1.0.2
     version: 1.0.2
@@ -16,7 +19,7 @@ dependencies:
     version: 3.0.6
   astro:
     specifier: ^3.1.2
-    version: 3.1.2(@types/node@14.18.33)(sass@1.68.0)
+    version: 3.1.2(@types/node@18.18.0)(sass@1.68.0)
   astro-compress:
     specifier: ^2.0.15
     version: 2.0.15
@@ -29,6 +32,9 @@ dependencies:
   sharp:
     specifier: ^0.32.6
     version: 0.32.6
+  typescript:
+    specifier: ^5.2.2
+    version: 5.2.2
   vercel:
     specifier: ^32.3.1
     version: 32.3.1
@@ -57,7 +63,7 @@ packages:
       astro: ^3.1.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.1.2(@types/node@14.18.33)(sass@1.68.0)
+      astro: 3.1.2(@types/node@18.18.0)(sass@1.68.0)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       mdast-util-definitions: 6.0.0
@@ -106,7 +112,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.0
       '@vercel/analytics': 1.0.2
       '@vercel/nft': 0.23.1
-      astro: 3.1.2(@types/node@14.18.33)(sass@1.68.0)
+      astro: 3.1.2(@types/node@18.18.0)(sass@1.68.0)
       esbuild: 0.19.3
       fast-glob: 3.3.1
       set-cookie-parser: 2.6.0
@@ -998,6 +1004,10 @@ packages:
     resolution: {integrity: sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg==}
     dev: false
 
+  /@types/node@18.18.0:
+    resolution: {integrity: sha512-3xA4X31gHT1F1l38ATDIL9GpRLdwVhnEFC8Uikv5ZLlXATwrCYyPq7ZWHxzxc3J/30SUiwiYT+bQe0/XvKlWbw==}
+    dev: false
+
   /@types/node@20.5.7:
     resolution: {integrity: sha512-dP7f3LdZIysZnmvP3ANJYTSwg+wLLl8p7RqniVlV7j+oXSXAbt9h0WIBFmJy5inWZoX9wZN6eXx+YXd9Rh3RBA==}
     dev: false
@@ -1361,7 +1371,7 @@ packages:
     resolution: {integrity: sha512-YQxp/ExF3NzUomAGuu1VKecO7/ETRnhnE50gqwAqfpbGPZFj4MYa4XxK1ukBg3R63QmKuE5uurOiKmXiLzttuw==}
     dev: false
 
-  /astro@3.1.2(@types/node@14.18.33)(sass@1.68.0):
+  /astro@3.1.2(@types/node@18.18.0)(sass@1.68.0):
     resolution: {integrity: sha512-9rlKyk6Qmw50Pc188+ey7JAEYBsJGh5an46AXGPMHIdEkH6YOc4b2z9Rr+TNF8QmM/U+C2ZQFRVQyCKU4i8/pg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1417,7 +1427,7 @@ packages:
       undici: 5.25.1
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.9(@types/node@14.18.33)(sass@1.68.0)
+      vite: 4.4.9(@types/node@18.18.0)(sass@1.68.0)
       vitefu: 0.2.4(vite@4.4.9)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -4814,6 +4824,12 @@ packages:
     hasBin: true
     dev: false
 
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: false
+
   /uid-promise@1.0.0:
     resolution: {integrity: sha512-R8375j0qwXyIu/7R0tjdF06/sElHqbmdmWC9M2qQHpEVbvE4I5+38KJI7LUUmQMp7NVq4tKHiBMkT0NFM453Ig==}
     dev: false
@@ -5023,7 +5039,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite@4.4.9(@types/node@14.18.33)(sass@1.68.0):
+  /vite@4.4.9(@types/node@18.18.0)(sass@1.68.0):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5051,7 +5067,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 14.18.33
+      '@types/node': 18.18.0
       esbuild: 0.18.20
       postcss: 8.4.30
       rollup: 3.29.2
@@ -5068,7 +5084,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.9(@types/node@14.18.33)(sass@1.68.0)
+      vite: 4.4.9(@types/node@18.18.0)(sass@1.68.0)
     dev: false
 
   /vscode-oniguruma@1.7.0:

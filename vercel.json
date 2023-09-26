@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/hello.ts": {
+    "api/send-email.ts": {
       "memory": 3008,
       "maxDuration": 60
     }
