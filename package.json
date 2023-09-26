@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "start": "vercel dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -13,10 +12,12 @@
   "dependencies": {
     "@astrojs/vercel": "^5.0.1",
     "@vercel/analytics": "^1.0.2",
+    "@vercel/node": "^3.0.6",
     "astro": "^3.1.2",
     "astro-compress": "^2.0.15",
     "astro-google-fonts-optimizer": "^0.2.2",
     "sass": "^1.68.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "vercel": "^32.3.1"
   }
 }
