@@ -88,3 +88,28 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #contact {
+    padding: 2rem 4rem;
+
+    .title {
+      margin-top: 0;
+    }
+
+    #contact-container {
+      flex-direction: column;
+
+      .contact-inner {
+        width: 100%;
+
+        .title {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+}
