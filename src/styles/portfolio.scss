@@ -14,3 +14,23 @@
     margin-top: 1rem;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #portfolio {
+    padding: 2rem 4rem;
+
+    #portfolio-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  #portfolio {
+    padding: 2rem 2rem;
+
+    #portfolio-cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
