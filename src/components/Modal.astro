@@ -40,6 +40,11 @@ const { id, title } = Astro.props;
       <main class="modal__content" id="modal-1-content">
         <slot />
       </main>
+      <footer>
+        <button aria-label="Close modal" data-micromodal-close
+          >Close Modal</button
+        >
+      </footer>
     </div>
   </div>
 </astro-modal>

@@ -1,4 +1,4 @@
-footer {
+#footer {
   background: #0a111e;
   height: 60px;
 
@@ -14,7 +14,7 @@ footer {
 }
 
 @media screen and (max-width: 450px) {
-  footer {
+  #footer {
     .footer-inner span {
       font-size: 0.7rem;
       text-align: center;
