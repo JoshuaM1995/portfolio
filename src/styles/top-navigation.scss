@@ -61,3 +61,19 @@ header#top-navigation {
     }
   }
 }
+
+@media screen and (max-width: 1180px) {
+  #top-navigation {
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+
+    .logo {
+      margin: 0 !important;
+    }
+
+    .top-navigation-right {
+      display: none !important;
+    }
+  }
+}
