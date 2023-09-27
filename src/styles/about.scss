@@ -73,6 +73,8 @@
 
 @media screen and (max-width: 1250px) {
   #about {
+    padding-bottom: 2rem;
+
     .content {
       width: 100%;
       display: flex;
@@ -112,6 +114,23 @@
           text-align: left;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #about {
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    .profile-picture {
+      width: 300px !important;
+      height: 300px !important;
+      margin-left: 0;
+    }
+
+    .about-me {
+      width: 300px !important;
     }
   }
 }

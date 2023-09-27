@@ -12,3 +12,12 @@ footer {
     font-size: 0.9rem;
   }
 }
+
+@media screen and (max-width: 450px) {
+  footer {
+    .footer-inner span {
+      font-size: 0.7rem;
+      text-align: center;
+    }
+  }
+}

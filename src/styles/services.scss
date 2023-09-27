@@ -14,8 +14,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-  #service-cards {
-    grid-template-columns: repeat(2, 1fr) !important;
+  #services {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+
+    #service-cards {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
   }
 }
 
@@ -26,5 +31,11 @@
     #service-cards {
       grid-template-columns: repeat(1, 1fr) !important;
     }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #services {
+    padding: 2rem;
   }
 }

@@ -99,3 +99,24 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  #home {
+    padding: 5rem 2rem 2rem 0;
+
+    .first-name {
+      margin-bottom: 1rem !important;
+    }
+
+    .first-name,
+    .last-name {
+      font-size: 3rem !important;
+    }
+
+    #typeit {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

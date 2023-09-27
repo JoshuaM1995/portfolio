@@ -27,10 +27,14 @@
 
 @media screen and (max-width: 880px) {
   #portfolio {
-    padding: 2rem 2rem;
-
     #portfolio-cards {
       grid-template-columns: repeat(1, 1fr);
     }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #portfolio {
+    padding: 1rem 2rem;
   }
 }
