@@ -11,12 +11,10 @@
     margin-top: 2rem;
     width: 100%;
 
-    .profile-picture {
+    .profile-picture-container {
       width: 50%;
 
-      img {
-        // width: 95%;
-        // height: 95%;
+      .profile-picture {
         width: 500px;
         height: 500px;
       }
@@ -66,8 +64,53 @@
         }
       }
 
-      button {
+      .download-resume {
         margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  #about {
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profile-picture-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        .profile-picture {
+          width: 400px;
+          height: 400px;
+        }
+      }
+
+      .about-me {
+        width: 500px;
+        text-align: center;
+        margin-left: 0;
+
+        .biography {
+          width: 100%;
+        }
+      }
+
+      #info-sections {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .info {
+          width: 100%;
+          text-align: left;
+        }
       }
     }
   }

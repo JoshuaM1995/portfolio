@@ -12,3 +12,19 @@
     margin-top: 2rem;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #service-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  #services {
+    padding: 2rem 4rem;
+
+    #service-cards {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+}
