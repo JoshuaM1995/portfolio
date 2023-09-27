@@ -116,5 +116,9 @@
 @media screen and (max-width: 450px) {
   #contact {
     padding: 1rem 2rem;
+
+    .contact-inner {
+      margin-bottom: 1rem;
+    }
   }
 }
