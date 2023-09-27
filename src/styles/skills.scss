@@ -37,3 +37,27 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #skills {
+    padding: 2rem 4rem;
+
+    #skills-container {
+      flex-direction: column;
+
+      #skills-information {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        .title {
+          margin-top: 0;
+        }
+      }
+
+      #skills-progress {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}
