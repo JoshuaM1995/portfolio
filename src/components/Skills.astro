@@ -1,4 +1,5 @@
 ---
+import type { build } from "astro";
 import "../styles/skills.scss";
 import ProgressBar from "./ProgressBar.astro";
 import TitleUnderlined from "./TitleUnderlined.astro";
@@ -9,26 +10,22 @@ import TitleUnderlined from "./TitleUnderlined.astro";
 
   <div id="skills-container">
     <div id="skills-information">
-      <h2 class="title">
-        All the skills that I have in that field of work are mentioned.
-      </h2>
+      <h2 class="title">My Skills and Expertise</h2>
       <p class="description">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores.
+        I've worked with React and React Native for the past 3 years, and I love
+        them. I have a proven track record of building high quality web and
+        mobile apps.
       </p>
       <p class="description">
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-        diam nonumy eirmod tempor invidunt.
+        I'm also very experience with NodeJS, and I've built multiple REST APIs
+        with NestJS, using controller/service architecture, queues, dependency
+        injection and microservices.
       </p>
       <p class="description">
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-        diam nonumy eirmod tempor invidunt. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-        amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt.
+        I also have experience with CI/CD. I've written multiple automation
+        scripts using Gitlab Pipelines and Github Actions to build, test and
+        lint code. I've also written multi-stage Dockerfiles and deployed them
+        to Kubernetes clusters using Pulumi (Infrastructure as Code).
       </p>
     </div>
 
@@ -40,10 +37,22 @@ import TitleUnderlined from "./TitleUnderlined.astro";
         value={80}
       />
       <ProgressBar id="react" label="React" value={80} />
-      <ProgressBar id="react-native" label="React Native" value={60} />
-      <ProgressBar id="node-js" label="Node.Js" value={70} />
-      <ProgressBar id="sql-postgres" label="SQL (Postgres)" value={60} />
-      <ProgressBar id="docker" label="Docker" value={50} />
+      <ProgressBar id="react-native" label="React Native (Expo)" value={60} />
+      <ProgressBar
+        id="node-js"
+        label="Node (ExpressJS, Koa, Fastify, NestJS)"
+        value={70}
+      />
+      <ProgressBar
+        id="sql-postgres"
+        label="SQL (PostgreSQL, MySQL)"
+        value={60}
+      />
+      <ProgressBar
+        id="ci-cd"
+        label="CI/CD (Github Actions, Gitlab Pipelines, Docker, Kubernetes, Pulumi)"
+        value={50}
+      />
     </div>
   </div>
 </section>

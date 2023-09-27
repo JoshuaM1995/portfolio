@@ -42,6 +42,10 @@
     }
   }
 
+  footer button {
+    display: none;
+  }
+
   .modal__close__container {
     display: flex;
     justify-content: flex-end;
@@ -209,6 +213,7 @@
       margin-top: 2rem;
 
       button {
+        display: block !important;
         background: #fff;
         width: 100%;
       }
