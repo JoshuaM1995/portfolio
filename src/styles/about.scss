@@ -35,6 +35,7 @@
         color: #18a0bb;
         font-weight: 300;
         font-size: 1.3rem;
+        margin-bottom: 0;
       }
 
       .biography,
@@ -44,6 +45,10 @@
         line-height: 1.5rem;
         font-weight: 300;
         width: 85%;
+      }
+
+      .biography {
+        margin-top: 1rem;
       }
 
       #info-sections {
