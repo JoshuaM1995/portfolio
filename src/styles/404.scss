@@ -1,0 +1,48 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #060d1b;
+}
+
+#not-found {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  h1 {
+    font-size: 10rem;
+    margin: 0;
+  }
+
+  p {
+    font-size: 4rem;
+  }
+
+  button {
+    color: #002844;
+    background: #18a1ba;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 2rem;
+    min-width: 150px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #19abc5;
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+}
