@@ -56,3 +56,96 @@ import TitleUnderlined from "./TitleUnderlined.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import anime from "animejs";
+
+  let hasScrolledToAbout = false;
+
+  function isElementVisible(element: HTMLElement) {
+    var rect = element.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  window.addEventListener("load", () => {
+    if (isElementVisible(document.getElementById("skills"))) {
+      if (!hasScrolledToAbout) {
+        animateSkillsSection();
+      }
+
+      hasScrolledToAbout = true;
+
+      document.getElementById("skills").classList.add("scrolled");
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (isElementVisible(document.getElementById("skills"))) {
+      if (!hasScrolledToAbout) {
+        animateSkillsSection();
+      }
+
+      hasScrolledToAbout = true;
+
+      document.getElementById("skills").classList.add("scrolled");
+    }
+  });
+
+  const animateSkillsSection = () => {
+    anime({
+      targets: "#skills .title-underlined",
+      opacity: [0, 1],
+      translateY: [-100, 0],
+      duration: 500,
+      easing: "linear",
+    });
+
+    anime({
+      targets: "#skills #skills-information .title",
+      opacity: [0, 1],
+      translateY: [-50, 0],
+      duration: 400,
+      delay: 500,
+      easing: "linear",
+    });
+
+    anime({
+      targets: "#skills #skills-information .description",
+      opacity: [0, 1],
+      translateX: [-50, 0],
+      duration: 400,
+      delay: 1100,
+      easing: "linear",
+    });
+
+    anime({
+      targets: "#skills #skills-progress",
+      opacity: [0, 1],
+      translateX: [50, 0],
+      duration: 400,
+      delay: 1100,
+      easing: "linear",
+    });
+
+    const progressBars = document.querySelectorAll(
+      "#skills #skills-progress .progress-bar"
+    );
+
+    progressBars.forEach((progressBar: HTMLProgressElement, index) => {
+      anime({
+        targets: progressBar,
+        value: [0, progressBar.value],
+        duration: 400,
+        delay: 1500 + index * 100,
+        easing: "linear",
+      });
+    });
+  };
+</script>
