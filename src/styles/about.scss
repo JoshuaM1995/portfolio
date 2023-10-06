@@ -6,6 +6,14 @@
   padding-left: 10rem;
   padding-right: 10rem;
 
+  & > div {
+    opacity: 0;
+  }
+
+  &.scrolled > div {
+    opacity: 1 !important;
+  }
+
   .content {
     display: flex;
     margin-top: 2rem;

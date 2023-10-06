@@ -29,3 +29,43 @@ import TitleUnderlined from "./TitleUnderlined.astro";
     </ServiceCard>
   </div>
 </section>
+
+<script>
+  import anime from "animejs";
+
+  let hasScrolledToAbout = false;
+
+  function isElementVisible(element) {
+    var rect = element.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  window.addEventListener("load", () => {
+    if (isElementVisible(document.getElementById("about"))) {
+      if (!hasScrolledToAbout) {
+        animateServicesSection();
+      }
+
+      hasScrolledToAbout = true;
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (isElementVisible(document.getElementById("about"))) {
+      if (!hasScrolledToAbout) {
+        animateServicesSection();
+      }
+
+      hasScrolledToAbout = true;
+    }
+  });
+
+  const animateServicesSection = () => {};
+</script>

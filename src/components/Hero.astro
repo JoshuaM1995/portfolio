@@ -24,6 +24,12 @@ import profilePicture from "../images/me.jpeg";
       alt="Picture of Joshua McNabb"
     />
   </div>
+
+  <div class="mouse-container">
+    <div class="mouse">
+      <div class="scroller"></div>
+    </div>
+  </div>
 </main>
 
 <script>
@@ -47,7 +53,7 @@ import profilePicture from "../images/me.jpeg";
   });
 
   anime({
-    targets: ["#typeit", ".profile-picture"],
+    targets: ["#typeit", ".hero-right .profile-picture"],
     opacity: [0, 1],
     duration: 500,
     delay: 1200,

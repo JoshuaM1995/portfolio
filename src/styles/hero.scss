@@ -17,7 +17,8 @@
 #home {
   display: flex;
   align-items: center;
-  padding: 17.75rem 0 14rem 10rem;
+  padding: 0 10rem;
+  height: 100vh;
 
   .hello {
     color: #18a0bb;
@@ -53,6 +54,51 @@
     height: 250px;
     border-radius: 250px;
     margin-left: 10rem;
+  }
+
+  .mouse-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+  }
+
+  .mouse {
+    width: 28px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 14px;
+  }
+
+  .scroller {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: white;
+    position: relative;
+    top: 10px;
+    left: 12px;
+    -webkit-animation: scrolls 1.3s ease-out infinite; /* Chrome, Safari, Opera */
+  }
+
+  @-webkit-keyframes scrolls {
+    0% {
+      top: 18px;
+      opacity: 1;
+      height: 4px;
+    }
+    95% {
+      top: 5px;
+      opacity: 0;
+      height: 8px;
+    }
+    100% {
+      top: 18px;
+      opacity: 1;
+      height: 4px;
+    }
   }
 }
 
