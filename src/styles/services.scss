@@ -5,6 +5,14 @@
   flex-direction: column;
   align-items: center;
 
+  & > div {
+    opacity: 0;
+  }
+
+  &.scrolled > div {
+    opacity: 1 !important;
+  }
+
   #service-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

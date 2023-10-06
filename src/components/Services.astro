@@ -35,7 +35,7 @@ import TitleUnderlined from "./TitleUnderlined.astro";
 
   let hasScrolledToAbout = false;
 
-  function isElementVisible(element) {
+  function isElementVisible(element: HTMLElement) {
     var rect = element.getBoundingClientRect();
 
     return (
@@ -48,24 +48,63 @@ import TitleUnderlined from "./TitleUnderlined.astro";
   }
 
   window.addEventListener("load", () => {
-    if (isElementVisible(document.getElementById("about"))) {
+    if (isElementVisible(document.getElementById("services"))) {
       if (!hasScrolledToAbout) {
         animateServicesSection();
       }
 
       hasScrolledToAbout = true;
+
+      document.getElementById("services").classList.add("scrolled");
     }
   });
 
   window.addEventListener("scroll", () => {
-    if (isElementVisible(document.getElementById("about"))) {
+    if (isElementVisible(document.getElementById("services"))) {
       if (!hasScrolledToAbout) {
         animateServicesSection();
       }
 
       hasScrolledToAbout = true;
+
+      document.getElementById("services").classList.add("scrolled");
     }
   });
 
-  const animateServicesSection = () => {};
+  const animateServicesSection = () => {
+    anime({
+      targets: "#services .title-underlined",
+      opacity: [0, 1],
+      translateY: [-100, 0],
+      duration: 500,
+      easing: "linear",
+    });
+
+    anime({
+      targets: ".service-card:nth-child(1)",
+      opacity: [0, 1],
+      translateX: [-50, 0],
+      duration: 400,
+      easing: "linear",
+      delay: 600,
+    });
+
+    anime({
+      targets: ".service-card:nth-child(2)",
+      opacity: [0, 1],
+      translateX: [-50, 0],
+      duration: 400,
+      easing: "linear",
+      delay: 1100,
+    });
+
+    anime({
+      targets: ".service-card:nth-child(3)",
+      opacity: [0, 1],
+      translateX: [-50, 0],
+      duration: 400,
+      easing: "linear",
+      delay: 1500,
+    });
+  };
 </script>
