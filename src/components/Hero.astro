@@ -26,6 +26,43 @@ import profilePicture from "../images/me.jpeg";
   </div>
 </main>
 
+<script>
+  import anime from "animejs";
+
+  anime({
+    targets: [".hello"],
+    translateY: [-100, 0],
+    opacity: [0, 1],
+    duration: 500,
+    easing: "linear",
+  });
+
+  anime({
+    targets: [".first-name", ".last-name"],
+    translateY: [-50, 0],
+    opacity: [0, 1],
+    duration: 500,
+    delay: 600,
+    easing: "linear",
+  });
+
+  anime({
+    targets: ["#typeit", ".profile-picture"],
+    opacity: [0, 1],
+    duration: 500,
+    delay: 1200,
+    easing: "linear",
+  });
+
+  anime({
+    targets: "#hire-me",
+    opacity: [0, 1],
+    duration: 500,
+    delay: 1200,
+    easing: "linear",
+  });
+</script>
+
 <script is:inline>
 /**
  * Minified by jsDelivr using UglifyJS v3.4.4.
@@ -1624,8 +1661,9 @@ particlesJS.load("particles-js", "/particles.json");
 </script>
 <script is:inline>
 new TypeIt("#typeit", {
-  speed: 100,
+  speed: 75,
   loop: true,
+  startDelay: 1200,
 })
   .type("Full-Stack Software Developer")
   .pause(1000)
