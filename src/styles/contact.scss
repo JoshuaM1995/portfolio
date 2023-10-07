@@ -5,6 +5,14 @@
   flex-direction: column;
   align-items: center;
 
+  & > div {
+    opacity: 0;
+  }
+
+  &.scrolled > div {
+    opacity: 1 !important;
+  }
+
   #contact-container {
     display: flex;
     margin-top: 2rem;
