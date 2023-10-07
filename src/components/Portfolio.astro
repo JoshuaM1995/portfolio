@@ -73,3 +73,77 @@ import { Image } from "astro:assets";
     toggleModal("spotalytics");
   });
 </script>
+
+<script>
+  import anime from "animejs";
+
+  let hasScrolledToPortfolio = false;
+
+  function isElementVisible(element: HTMLElement) {
+    var rect = element.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  window.addEventListener("load", () => {
+    if (isElementVisible(document.getElementById("portfolio"))) {
+      if (!hasScrolledToPortfolio) {
+        animatePortfolioSection();
+      }
+
+      hasScrolledToPortfolio = true;
+
+      document.getElementById("portfolio").classList.add("scrolled");
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (isElementVisible(document.getElementById("portfolio"))) {
+      if (!hasScrolledToPortfolio) {
+        animatePortfolioSection();
+      }
+
+      hasScrolledToPortfolio = true;
+
+      document.getElementById("portfolio").classList.add("scrolled");
+    }
+  });
+
+  const animatePortfolioSection = () => {
+    anime({
+      targets: "#portfolio .title-underlined",
+      opacity: [0, 1],
+      translateY: [-100, 0],
+      duration: 500,
+      easing: "linear",
+    });
+
+    anime({
+      targets: "#portfolio #portfolio-cards",
+      opacity: [0, 1],
+      duration: 500,
+      easing: "linear",
+    });
+
+    const portfolioCardElements = document.querySelectorAll(
+      "#portfolio .card-image-box"
+    );
+
+    portfolioCardElements.forEach((element, index) => {
+      anime({
+        targets: element,
+        opacity: [0, 1],
+        translateX: [-50, 0],
+        duration: 400,
+        easing: "linear",
+        delay: 600 + index * 400,
+      });
+    });
+  };
+</script>
