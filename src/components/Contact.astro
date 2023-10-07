@@ -29,7 +29,7 @@ if (Astro.request.method === "POST") {
   <TitleUnderlined width={200}>Contact Me</TitleUnderlined>
 
   <div id="contact-container">
-    <div class="contact-inner">
+    <div id="contact-form-container" class="contact-inner">
       <h3 class="title">Say Hello</h3>
 
       <form id="contact-form" method="POST">
@@ -88,3 +88,73 @@ if (Astro.request.method === "POST") {
     </div>
   </div>
 </section>
+
+<script>
+  import anime from "animejs";
+
+  let hasScrolledToContact = false;
+
+  function isElementVisible(element: HTMLElement) {
+    var rect = element.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  window.addEventListener("load", () => {
+    if (isElementVisible(document.getElementById("contact"))) {
+      if (!hasScrolledToContact) {
+        animateContactSection();
+      }
+
+      hasScrolledToContact = true;
+
+      document.getElementById("contact").classList.add("scrolled");
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (isElementVisible(document.getElementById("contact"))) {
+      if (!hasScrolledToContact) {
+        animateContactSection();
+      }
+
+      hasScrolledToContact = true;
+
+      document.getElementById("contact").classList.add("scrolled");
+    }
+  });
+
+  const animateContactSection = () => {
+    anime({
+      targets: "#contact .title-underlined",
+      opacity: [0, 1],
+      translateY: [-100, 0],
+      duration: 500,
+      easing: "linear",
+    });
+
+    anime({
+      targets: "#contact #contact-form-container",
+      opacity: [0, 1],
+      translateX: [-50, 0],
+      duration: 500,
+      delay: 600,
+      easing: "linear",
+    });
+
+    anime({
+      targets: "#contact #contact-info",
+      opacity: [0, 1],
+      translateX: [50, 0],
+      duration: 500,
+      delay: 600,
+      easing: "linear",
+    });
+  };
+</script>
