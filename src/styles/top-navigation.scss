@@ -8,6 +8,10 @@ header#top-navigation {
   position: fixed;
   z-index: 2;
 
+  #top-navigation-mobile {
+    display: none;
+  }
+
   .logo {
     color: #fff;
     margin-right: 6rem;
@@ -67,6 +71,12 @@ header#top-navigation {
     display: flex;
     justify-content: center;
     padding: 0 !important;
+
+    #top-navigation-mobile {
+      display: block !important;
+      position: absolute;
+      left: 1rem;
+    }
 
     .logo {
       margin: 0 !important;
