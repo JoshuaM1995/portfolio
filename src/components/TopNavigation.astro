@@ -3,12 +3,18 @@ import "../styles/top-navigation.scss";
 ---
 
 <header id="top-navigation">
+  <div class="button-container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+
   <a href="/" class="logo">
     <span>JOSHUA</span> MCNABB
   </a>
 
-  <div class="top-navigation-right">
-    <nav>
+  <div id="overlay" class="top-navigation-right overlay">
+    <nav class="overlay-menu">
       <ul>
         <li>
           <a class="menu-item" href="#" class="active" data-section="home"
@@ -104,8 +110,21 @@ import "../styles/top-navigation.scss";
   // Initial update of the active menu item
   updateActiveMenuItem();
 
-  // Add scroll event listener to update the active menu item when scrolling
-  window.addEventListener("scroll", () => {
-    updateActiveMenuItem();
+  const htmlElement = document.querySelector("html");
+
+  document.getElementById("toggle").addEventListener("click", function () {
+    const self = document.getElementById(this.id);
+
+    // If self has class active, disable scrolling
+    if (self.classList.contains("active")) {
+      console.log("disable scrolling");
+      htmlElement.style.overflow = "auto";
+    } else {
+      console.log("enable");
+      htmlElement.style.overflow = "hidden";
+    }
+
+    document.getElementById(this.id).classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("open");
   });
 </script>
