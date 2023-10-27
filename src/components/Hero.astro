@@ -615,6 +615,28 @@ const options: ISourceOptions = {
     delay: 1200,
     easing: "linear",
   });
+
+  anime({
+    targets: "#hire-me",
+    translateX: [
+      { value: "-=5", duration: 50 },
+      { value: "+=10", duration: 100 },
+      { value: "-=10", duration: 100 },
+      { value: "+=10", duration: 100 },
+      { value: "-=10", duration: 100 },
+      { value: "+=5", duration: 50 },
+    ],
+    rotate: [
+      { value: "-=2", duration: 50 },
+      { value: "+=4", duration: 100 },
+      { value: "-=4", duration: 100 },
+      { value: "+=4", duration: 100 },
+      { value: "-=4", duration: 100 },
+      { value: "+=2", duration: 50 },
+    ],
+    easing: "easeInOutQuad",
+    delay: 1800,
+  });
 </script>
 
 <script is:inline>
