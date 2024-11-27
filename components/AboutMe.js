@@ -70,6 +70,26 @@ export default function AboutMe() {
               fontSize={{ base: "14px", md: "16px" }}
               whiteSpace="pre-line"
             >
+              {" "}
+              Hey! I'm Joshua McNabb. I've been close to a computer since an
+              early age, and been passionate about it ever since.
+              <br />
+              <br />I started my journey with web development way back when I
+              was 17 years old. It started with a curiosity of how websites were
+              made and how they worked. My hobby quickly turned into a passion
+              and I went to school to learn more about it. I graduated from SAIT
+              with a diploma in Object-Oriented Software Development, and I have
+              been working in the industry ever since.
+              <br />
+              <br />
+              When I'm not coding I play games with my friends, watch some show
+              on Netflix, or if the weather's good, go longboarding! 🛹
+            </Text>
+            {/* <Text
+              color="textSecondary"
+              fontSize={{ base: "14px", md: "16px" }}
+              whiteSpace="pre-line"
+            >
               Hey! I'm Joshua McNabb, I've been close to a computer since an
               early age, and been passionate about it ever since. <br />
               <br /> I really liked to build stuff using{" "}
@@ -122,7 +142,7 @@ export default function AboutMe() {
               <br />
               When I'm not coding I play games with my friends, watch some show
               on Netflix, or if the weather's good, play basketball! 🏀
-            </Text>
+            </Text> */}
           </Stack>
         </SlideUpWhenVisible>
         <SlideUpWhenVisible>
