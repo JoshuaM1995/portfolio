@@ -12,17 +12,18 @@ export default function ContactMe({ contactMe }) {
       action: event,
     });
   };
+
   return (
     <Stack alignItems="center" justifyContent="center" w="100%" spacing={10}>
       <SlideUpWhenVisible>
         <Heading fontSize={{ base: "4xl", md: "5xl" }} textAlign="center">
-          Keep In Touch.
+          Get In Touch.
         </Heading>
       </SlideUpWhenVisible>
 
       <SlideUpWhenVisible>
         <Text color="textSecondary" fontSize="md" textAlign="center">
-          {contactMe[0].fields.title}{" "}
+          {/* {contactMe[0].fields.title}{" "} */}
           <chakra.span
             color="button1"
             display={{ base: "block", md: "inline" }}
@@ -68,8 +69,8 @@ export default function ContactMe({ contactMe }) {
             </Button>
           </Link>
           <Link
-            href="https://drive.google.com/file/d/1IvhcdThnfMAcPEHy6Yvq4o8vSaIi_ArV/view?usp=sharing"
-            isExternal
+            download="Joshua_McNabb_Resume.pdf"
+            href="/pdf/Joshua_McNabb_Resume.pdf"
             onClick={() => handleClick("contact_resume")}
           >
             <Button

@@ -148,7 +148,7 @@ export default function AboutMe() {
                 borderRadius="50%"
                 objectFit="cover"
                 alt="Joshua McNabb"
-                src="https://i.imgur.com/jk8NmSx.jpeg"
+                src="/images/joshua.jpeg"
               />
             </Box>
           </Flex>

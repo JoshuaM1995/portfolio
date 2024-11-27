@@ -51,7 +51,7 @@ export default function Introduction({ introduction: introductions }) {
             fontSize="display2"
             fontWeight="medium"
           >
-            Hey there!, I'm-
+            Hey there! I'm
           </Text>
         </Box>
         <Heading
