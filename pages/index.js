@@ -16,9 +16,9 @@ export default function Index({ introduction, projects, articles, contactMe }) {
         <Head>
           <title>Joshua McNabb - Software Engineer</title>
           <meta content="Joshua McNabb - Software Engineer" name="title" />
-          <meta content="abdulrcs, abdulrcs website" name="keywords" />
+          <meta content="joshuamcnabb, joshuamcnabb website" name="keywords" />
           <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
+            content="Software Engineer based in Canada."
             name="description"
           />
 
@@ -29,7 +29,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             property="og:title"
           />
           <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
+            content="Software Engineer based in Canada."
             property="og:description"
           />
           <meta
@@ -44,7 +44,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             property="twitter:title"
           />
           <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
+            content="Software Engineer based in Canada."
             property="twitter:description"
           />
           <meta
@@ -84,12 +84,12 @@ export async function getStaticProps() {
   });
 
   const blog = new GithubBlog({
-    repo: "abdulrcs/joshuamcnabb.ca",
+    repo: "JoshuaM1995/portfolio",
     token: process.env.GITHUB_TOKEN,
   });
   let data2 = await blog.getPosts({
     query: {
-      author: "abdulrcs",
+      author: "JoshuaM1995",
       type: "post",
       state: "published",
     },

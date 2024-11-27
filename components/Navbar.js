@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef } from "react";
 import {
   Button,
   Flex,
@@ -14,20 +14,20 @@ import {
   DrawerBody,
   Stack,
   Icon,
-} from '@chakra-ui/react'
-import NextLink from 'next/link'
-import styled from '@emotion/styled'
-import useMediaQuery from '../hook/useMediaQuery'
-import { AiOutlineMenu } from 'react-icons/ai'
+} from "@chakra-ui/react";
+import NextLink from "next/link";
+import styled from "@emotion/styled";
+import useMediaQuery from "../hook/useMediaQuery";
+import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Navbar({ enableTransition }) {
-  const isLargerThan768 = useMediaQuery(768)
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const firstField = useRef()
+  const isLargerThan768 = useMediaQuery(768);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const firstField = useRef();
   const Bracket = styled.span`
     color: #8f9094;
     font-weight: 600;
-  `
+  `;
   const NavbarDrawer = () => (
     <>
       <Drawer
@@ -40,7 +40,7 @@ export default function Navbar({ enableTransition }) {
         <DrawerContent bgColor="secondary">
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth="1px">
-            <Bracket>&#123;</Bracket>A<Bracket>&#125;</Bracket>
+            <Bracket>&#123;</Bracket>J<Bracket>&#125;</Bracket>
           </DrawerHeader>
 
           <DrawerBody>
@@ -65,7 +65,7 @@ export default function Navbar({ enableTransition }) {
         </DrawerContent>
       </Drawer>
     </>
-  )
+  );
 
   return (
     <Box pos="sticky" zIndex={99}>
@@ -85,7 +85,7 @@ export default function Navbar({ enableTransition }) {
           align="center"
           justify="space-between"
           direction="row"
-          w={{ base: '100%', lg: '75rem' }}
+          w={{ base: "100%", lg: "75rem" }}
           mx="auto"
           px="22px"
           py="3"
@@ -99,7 +99,7 @@ export default function Navbar({ enableTransition }) {
               fontWeight="bold"
               cursor="pointer"
             >
-              <Bracket>&#123;</Bracket>A<Bracket>&#125;</Bracket>
+              <Bracket>&#123;</Bracket>J<Bracket>&#125;</Bracket>
             </Text>
           </NextLink>
           {isLargerThan768 ? (
@@ -118,7 +118,7 @@ export default function Navbar({ enableTransition }) {
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
                   Blog
                 </Button>
-              </NextLink>{' '}
+              </NextLink>{" "}
             </Box>
           ) : (
             <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} />
@@ -127,5 +127,5 @@ export default function Navbar({ enableTransition }) {
       </Slide>
       <NavbarDrawer />
     </Box>
-  )
+  );
 }

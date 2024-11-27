@@ -25,7 +25,7 @@ Create an `.env.local` and follow the variable name based on `.env.example` and 
 
 > 📌  In this portfolio website, it has 5 Content type which is:  
 > > ~~1. BlogPosts~~  
-> > After the [⚡2.0.0 update](https://github.com/abdulrcs/joshuamcnabb.ca/pull/17), I use Github Issues as blog content!  
+> > After the [⚡2.0.0 update](https://github.com/JoshuaM1995/portfolio/pull/17), I use Github Issues as blog content!  
 > > More details about this on: https://joshuamcnabb.ca/blog/unleash-your-dev-blog-write-more-with-github-issues-as-your-cms
 > 2. FeaturedProjects
 > 3. Projects
@@ -75,7 +75,7 @@ Start the project by `npm run dev` or `yarn dev`
 ### Deployment
 You can deploy easily by using [Vercel](https://vercel.com/) 🎉  
   
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fabdulrcs%2Fjoshuamcnabb.ca)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FJoshuaM1995%2Fjoshuamcnabb.ca)
 
 ## 📌 Overview
 `pages/index.js` = Homepage  

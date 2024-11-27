@@ -223,13 +223,13 @@ export default function Post({ metadata, publishedDate, source, toc }) {
 
 export async function getStaticPaths() {
   const blog = new GithubBlog({
-    repo: "abdulrcs/joshuamcnabb.ca",
+    repo: "JoshuaM1995/portfolio",
     token: process.env.GITHUB_TOKEN,
   });
 
   const data = await blog.getPosts({
     query: {
-      author: "abdulrcs",
+      author: "JoshuaM1995",
       type: "project",
       state: "published",
     },
@@ -246,12 +246,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const blog = new GithubBlog({
-    repo: "abdulrcs/joshuamcnabb.ca",
+    repo: "JoshuaM1995/portfolio",
     token: process.env.GITHUB_TOKEN,
   });
   const data = await blog.getPost({
     query: {
-      author: "abdulrcs",
+      author: "JoshuaM1995",
       search: params.slug,
     },
   });

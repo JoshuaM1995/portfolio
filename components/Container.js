@@ -29,8 +29,8 @@ const Container = ({ enableTransition, children }) => {
         </Flex>
         <Stack alignItems="center" mt={10} mb={5}>
           <Text fontSize="sm" textAlign="center">
-            Designed and Developed by Joshua McNabb.
-            <br />
+            {/* Designed and Developed by Joshua McNabb.
+            <br /> */}
             Built with{" "}
             <chakra.span color="button1" fontWeight="semibold">
               Next.js

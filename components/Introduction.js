@@ -7,19 +7,19 @@ import {
   Button,
   SlideFade,
   Image,
-} from '@chakra-ui/react'
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
-import useMediaQuery from '../hook/useMediaQuery'
-import ReactGA from 'react-ga4'
+} from "@chakra-ui/react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import useMediaQuery from "../hook/useMediaQuery";
+import ReactGA from "react-ga4";
 
-export default function Introduction({ introduction }) {
-  const isLargerThan800 = useMediaQuery(800)
+export default function Introduction({ introduction: introductions }) {
+  const isLargerThan800 = useMediaQuery(800);
   const handleClick = (event) => {
     ReactGA.event({
-      category: 'click',
+      category: "click",
       action: event,
-    })
-  }
+    });
+  };
 
   return (
     <Stack
@@ -37,9 +37,9 @@ export default function Introduction({ introduction }) {
           <Image
             pos="absolute"
             zIndex={0}
-            top={{ base: '0', md: '-15' }}
-            left={{ base: '-4', md: '-10' }}
-            w={{ base: '70px', md: '150px' }}
+            top={{ base: "0", md: "-15" }}
+            left={{ base: "-4", md: "-10" }}
+            w={{ base: "70px", md: "150px" }}
             alt=""
             filter="invert(0.1)"
             src="https://svgsilh.com/svg/26432.svg"
@@ -59,8 +59,8 @@ export default function Introduction({ introduction }) {
           zIndex={1}
           color="displayColor"
           fontSize="display"
-          lineHeight={'95%'}
-          letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
+          lineHeight={"95%"}
+          letterSpacing={{ sm: "-1.2px", md: "-1.8px" }}
         >
           Joshua McNabb.
         </Heading>
@@ -80,11 +80,11 @@ export default function Introduction({ introduction }) {
         >
           <Box as="span" color="displayColor">
             Software Engineer.
-          </Box>{' '}
-          A self-taught developer{' '}
+          </Box>{" "}
+          A self-taught developer{" "}
           {isLargerThan800
-            ? 'with an\ninterest in Computer Science.'
-            : 'with an interest in Computer Science.'}
+            ? "with a\nfocus in web development."
+            : "with a focus in web development."}
         </Heading>
       </SlideFade>
 
@@ -94,8 +94,32 @@ export default function Introduction({ introduction }) {
         in={true}
       >
         <Text color="textSecondary" fontSize="display3">
-          {introduction[0].fields.emoji} {introduction[0].fields.description}
-          <br />
+          {introductions.map((introduction, i) => {
+            return (
+              <Stack key={i} isInline spacing={1}>
+                <Box>{introduction.fields.emoji}</Box>
+                <Box>
+                  {introduction.fields.description}{" "}
+                  {introduction.fields.companyUrl ? (
+                    <Link
+                      href={introduction.fields.companyUrl}
+                      isExternal
+                      onClick={() => handleClick("Introduction_companyUrl")}
+                      rel="noreferrer"
+                    >
+                      {introduction.fields.company}
+                    </Link>
+                  ) : (
+                    <Box as="span" color="button1">
+                      {introduction.fields.company}
+                    </Box>
+                  )}
+                </Box>
+              </Stack>
+            );
+          })}
+          {/* {introduction[0].fields.emoji} {introduction[0].fields.description} */}
+          {/* <br />
           <Stack isInline spacing={1}>
             <Box>{introduction[1].fields.emoji}</Box>
             <Box>
@@ -115,7 +139,7 @@ export default function Introduction({ introduction }) {
                 </Box>
               )}
             </Box>
-          </Stack>
+          </Stack> */}
         </Text>
       </SlideFade>
       <SlideFade
@@ -124,36 +148,36 @@ export default function Introduction({ introduction }) {
         in={true}
       >
         <Stack isInline spacing={4}>
-          <Link href="https://github.com/abdulrcs" isExternal>
+          <Link href="https://github.com/JoshuaM1995" isExternal>
             <Button
               pos="static"
               color="white"
               leftIcon={<FaGithub color="#3CCF91" />}
-              onClick={() => handleClick('introduction_github')}
-              size={isLargerThan800 ? 'md' : 'sm'}
+              onClick={() => handleClick("introduction_github")}
+              size={isLargerThan800 ? "md" : "sm"}
             >
               Github
             </Button>
           </Link>
-          <Link href="https://linkedin.com/in/abdulrcs" isExternal>
+          <Link href="https://www.linkedin.com/in/jmcnabb1995" isExternal>
             <Button
               pos="static"
               color="white"
               leftIcon={<FaLinkedin color="#3CCF91" />}
-              onClick={() => handleClick('introduction_linkedin')}
-              size={isLargerThan800 ? 'md' : 'sm'}
+              onClick={() => handleClick("introduction_linkedin")}
+              size={isLargerThan800 ? "md" : "sm"}
             >
               LinkedIn
             </Button>
           </Link>
-          <Link href="mailto:abdulrcs1@gmail.com" isExternal>
+          <Link href="mailto:info@joshuamcnabb.ca" isExternal>
             <Button
               pos="static"
               color="white"
               transition="0.3s"
               leftIcon={<FaEnvelope fill="#3CCF91" />}
-              onClick={() => handleClick('introduction_email')}
-              size={isLargerThan800 ? 'md' : 'sm'}
+              onClick={() => handleClick("introduction_email")}
+              size={isLargerThan800 ? "md" : "sm"}
             >
               Email
             </Button>
@@ -161,5 +185,5 @@ export default function Introduction({ introduction }) {
         </Stack>
       </SlideFade>
     </Stack>
-  )
+  );
 }

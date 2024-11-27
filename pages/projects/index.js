@@ -111,12 +111,12 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: "abdulrcs/joshuamcnabb.ca",
+    repo: "JoshuaM1995/portfolio",
     token: process.env.GITHUB_TOKEN,
   });
   const projects = await blog.getPosts({
     query: {
-      author: "abdulrcs",
+      author: "JoshuaM1995",
       type: "project",
       state: "published",
     },
