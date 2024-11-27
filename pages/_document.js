@@ -39,7 +39,7 @@ export default class MyDocument extends NextDocument {
           <meta content="Joshua McNabb - Software Engineer" name="title" />
           <meta content="joshuamcnabb, joshuamcnabb website" name="keywords" />
           <meta
-            content="Software Engineer based in Canada."
+            content="I'm Joshua McNabb, a Full-Stack Software Developer skilled in JavaScript, TypeScript, Node.js, PostgreSQL, and React. Explore my portfolio and experience."
             name="description"
           />
 
@@ -53,7 +53,7 @@ export default class MyDocument extends NextDocument {
           />
           <meta
             property="og:description"
-            content="Software Engineer based in Canada."
+            content="I'm Joshua McNabb, a Full-Stack Software Developer skilled in JavaScript, TypeScript, Node.js, PostgreSQL, and React. Explore my portfolio and experience."
           />
           <meta
             property="og:image"
@@ -70,7 +70,7 @@ export default class MyDocument extends NextDocument {
           />
           <meta
             name="twitter:description"
-            content="Software Engineer based in Canada."
+            content="I'm Joshua McNabb, a Full-Stack Software Developer skilled in JavaScript, TypeScript, Node.js, PostgreSQL, and React. Explore my portfolio and experience."
           />
           <meta
             name="twitter:image"
