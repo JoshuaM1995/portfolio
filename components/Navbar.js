@@ -50,7 +50,7 @@ export default function Navbar({ enableTransition }) {
                   Home
                 </Button>
               </NextLink>
-              <NextLink passHref href="/projects">
+              {/* <NextLink passHref href="/projects">
                 <Button as="a" fontSize="16px" variant="ghost">
                   Projects
                 </Button>
@@ -59,7 +59,7 @@ export default function Navbar({ enableTransition }) {
                 <Button as="a" fontSize="16px" variant="ghost">
                   Blog
                 </Button>
-              </NextLink>
+              </NextLink> */}
             </Stack>
           </DrawerBody>
         </DrawerContent>
@@ -109,7 +109,7 @@ export default function Navbar({ enableTransition }) {
                   Home
                 </Button>
               </NextLink>
-              <NextLink passHref href="/projects">
+              {/* <NextLink passHref href="/projects">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
                   Projects
                 </Button>
@@ -118,7 +118,7 @@ export default function Navbar({ enableTransition }) {
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
                   Blog
                 </Button>
-              </NextLink>{" "}
+              </NextLink>{" "} */}
             </Box>
           ) : (
             <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} />
