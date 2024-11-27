@@ -55,7 +55,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           as="main"
           alignItems="flex-start"
           justifyContent="center"
-          mt={{ base: "15vh", md: "20vh" }}
+          mt={{ base: "10vh", md: "15vh" }}
           pb="144px"
           spacing={{ base: "100px", md: "144px" }}
         >
