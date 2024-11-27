@@ -8,72 +8,72 @@ import {
   Spinner,
   Stack,
   Text,
-} from '@chakra-ui/react'
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
-import { useEffect, useState } from 'react'
+} from "@chakra-ui/react";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import { useEffect, useState } from "react";
 
-import ReactGA from 'react-ga4'
+import ReactGA from "react-ga4";
 
-import mdxPrism from 'mdx-prism'
+import mdxPrism from "mdx-prism";
 
-import readingTime from 'reading-time'
+import readingTime from "reading-time";
 
-import { useRouter } from 'next/router'
-import Container from '../../components/Container'
-import MDXComponents from '../../components/MDXComponents'
-import ProjectContainer from '../../components/ProjectContainer'
+import { useRouter } from "next/router";
+import Container from "../../components/Container";
+import MDXComponents from "../../components/MDXComponents";
+import ProjectContainer from "../../components/ProjectContainer";
 
-import { GithubBlog } from '@rena.to/github-blog'
+import { GithubBlog } from "@rena.to/github-blog";
 
-import { FaGithub, FaLink, FaPersonBooth, FaUser } from 'react-icons/fa'
-import NextSeoData from '../../components/NextSeoData'
-import useUtterances from '../../hook/useUtterances'
-import Image from 'next/image'
+import { FaGithub, FaLink, FaPersonBooth, FaUser } from "react-icons/fa";
+import NextSeoData from "../../components/NextSeoData";
+import useUtterances from "../../hook/useUtterances";
+import Image from "next/image";
 
 export default function Post({ metadata, publishedDate, source, toc }) {
-  const [views, setViews] = useState('...')
+  const [views, setViews] = useState("...");
 
-  const router = useRouter()
-  const { slug } = router.query
+  const router = useRouter();
+  const { slug } = router.query;
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/views/${slug}`)
       .then((res) => res.json())
-      .then((json) => setViews(json.views))
-  }, [slug])
+      .then((json) => setViews(json.views));
+  }, [slug]);
 
-  const [activeId, setActiveId] = useState()
+  const [activeId, setActiveId] = useState();
   useEffect(() => {
     const handleScroll = () => {
-      let currentId
+      let currentId;
       for (const heading of toc) {
-        const element = document.getElementById(heading.title)
+        const element = document.getElementById(heading.title);
         if (element) {
-          const rect = element.getBoundingClientRect()
+          const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight / 2) {
-            currentId = heading.title
+            currentId = heading.title;
           } else {
-            break
+            break;
           }
         }
       }
-      setActiveId(currentId)
-    }
+      setActiveId(currentId);
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [toc])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [toc]);
 
   const handleClick = (event) => {
     ReactGA.event({
-      category: 'click',
+      category: "click",
       action: event,
-    })
-  }
+    });
+  };
 
-  const { isCommentsLoading } = useUtterances('comments', metadata.title)
+  const { isCommentsLoading } = useUtterances("comments", metadata.title);
 
   return (
     <>
@@ -89,7 +89,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
             mx="auto"
             mt="73px"
             border="1px"
-            borderColor={{ base: '#333', md: 'borderColor' }}
+            borderColor={{ base: "#333", md: "borderColor" }}
             borderRadius="10px"
           >
             <Image
@@ -97,7 +97,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
               height={768}
               objectFit="cover"
               style={{
-                borderRadius: '10px',
+                borderRadius: "10px",
               }}
               alt=""
               priority
@@ -110,15 +110,15 @@ export default function Post({ metadata, publishedDate, source, toc }) {
             <Heading
               as="h1"
               color="displayColor"
-              fontSize={['3xl', '3xl', '5xl', '5xl']}
+              fontSize={["3xl", "3xl", "5xl", "5xl"]}
             >
               {metadata.title}
             </Heading>
-            <Text color="textPrimary" fontSize={['xs', 'xs', 'sm', 'sm']}>
+            <Text color="textPrimary" fontSize={["xs", "xs", "sm", "sm"]}>
               {metadata.frontmatter.summary}
             </Text>
             <HStack spacing={2}>
-              <Text color="textPrimary" fontSize={['xs', 'xs', 'sm', 'sm']}>
+              <Text color="textPrimary" fontSize={["xs", "xs", "sm", "sm"]}>
                 {views} views
               </Text>
               {metadata.frontmatter.githubLink && (
@@ -127,7 +127,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                   <HStack alignItems="center">
                     <FaGithub fontSize="20px" />
                     <Link
-                      fontSize={['xs', 'xs', 'sm', 'sm']}
+                      fontSize={["xs", "xs", "sm", "sm"]}
                       href={metadata.frontmatter.githubLink}
                       isExternal
                       onClick={() => handleClick(`${metadata.title}_github`)}
@@ -144,7 +144,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                   <HStack>
                     <FaLink fontSize="18px" />
                     <Link
-                      fontSize={['xs', 'xs', 'sm', 'sm']}
+                      fontSize={["xs", "xs", "sm", "sm"]}
                       href={metadata.frontmatter.deployLink}
                       isExternal
                       onClick={() => handleClick(`${metadata.title}_livesite`)}
@@ -157,7 +157,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
             </HStack>
             <HStack>
               <FaUser fill="#D1D5DB" fontSize="14px" />
-              <Text color="#D1D5DB" fontSize={['xs', 'xs', 'sm', 'sm']}>
+              <Text color="#D1D5DB" fontSize={["xs", "xs", "sm", "sm"]}>
                 {metadata.frontmatter.category}
               </Text>
             </HStack>
@@ -167,7 +167,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
         </Stack>
 
         <HStack alignItems="start" pt="23px" spacing="36px">
-          <Stack w={{ base: '100%', md: '50rem' }}>
+          <Stack w={{ base: "100%", md: "50rem" }}>
             <ProjectContainer>
               <MDXRemote {...source} components={MDXComponents} />
             </ProjectContainer>
@@ -176,7 +176,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
           <Stack
             pos="sticky"
             top="6rem"
-            display={{ base: 'none', md: 'flex' }}
+            display={{ base: "none", md: "flex" }}
             w="250px"
             h="500px"
           >
@@ -189,11 +189,11 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                 <Text
                   key={heading.id}
                   color={
-                    heading.title === activeId ? 'activeColor' : 'textSecondary'
+                    heading.title === activeId ? "activeColor" : "textSecondary"
                   }
-                  fontSize={['sm', 'sm', 'md', 'md']}
+                  fontSize={["sm", "sm", "md", "md"]}
                   fontWeight={
-                    heading.title === activeId ? 'semibold' : 'normal'
+                    heading.title === activeId ? "semibold" : "normal"
                   }
                 >
                   <a href={`#${heading.title}`}>{heading.title}</a>
@@ -218,58 +218,58 @@ export default function Post({ metadata, publishedDate, source, toc }) {
         </Stack>
       </Container>
     </>
-  )
+  );
 }
 
 export async function getStaticPaths() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: "abdulrcs/joshuamcnabb.ca",
     token: process.env.GITHUB_TOKEN,
-  })
+  });
 
   const data = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
-      type: 'project',
-      state: 'published',
+      author: "abdulrcs",
+      type: "project",
+      state: "published",
     },
     pager: { limit: 10, offset: 0 },
-  })
+  });
 
   return {
     paths: data.edges.map(({ post }) => ({
       params: { slug: post.frontmatter.slug },
     })),
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params }) {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: "abdulrcs/joshuamcnabb.ca",
     token: process.env.GITHUB_TOKEN,
-  })
+  });
   const data = await blog.getPost({
     query: {
-      author: 'abdulrcs',
+      author: "abdulrcs",
       search: params.slug,
     },
-  })
-  const article = data.post
-  const source = article.body
-  article.readingTime = readingTime(source).text
+  });
+  const article = data.post;
+  const source = article.body;
+  article.readingTime = readingTime(source).text;
   const mdxSource = await serialize(source, {
     mdxOptions: {
       rehypePlugins: [mdxPrism],
     },
-  })
+  });
 
-  const headings = source.match(/#{2,4} .+/g)
+  const headings = source.match(/#{2,4} .+/g);
   const toc = headings.map((heading) => {
-    const level = heading.match(/#/g).length - 2
-    const title = heading.replace(/#{2,4} /, '')
-    return { title, level }
-  })
+    const level = heading.match(/#/g).length - 2;
+    const title = heading.replace(/#{2,4} /, "");
+    return { title, level };
+  });
 
   return {
     props: {
@@ -279,5 +279,5 @@ export async function getStaticProps({ params }) {
       toc: toc,
     },
     revalidate: 30,
-  }
+  };
 }

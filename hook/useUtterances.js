@@ -1,83 +1,84 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
 export default function useUtterances(commentNodeId, title) {
-  const commentNodeRef = useRef()
-  const [isCommentsLoading, setIsCommentsLoading] = useState(true)
-  let intersectionObserver
-  let mutationObserver
-  let hasLoaded = false
+  const commentNodeRef = useRef();
+  const [isCommentsLoading, setIsCommentsLoading] = useState(true);
+  let intersectionObserver;
+  let mutationObserver;
+  let hasLoaded = false;
 
   useEffect(() => {
     const injectScript = () => {
-      if (hasLoaded) return
+      if (hasLoaded) return;
 
-      const scriptParentNode = document.getElementById(commentNodeId)
-      if (!scriptParentNode) return
+      const scriptParentNode = document.getElementById(commentNodeId);
+      if (!scriptParentNode) return;
 
-      const script = document.createElement('script')
-      script.src = 'https://utteranc.es/client.js'
-      script.async = true
-      script.setAttribute('repo', 'abdulrcs/abdulrahman.id')
-      script.setAttribute('issue-term', title)
-      script.setAttribute('theme', 'icy-dark')
-      script.crossOrigin = 'anonymous'
+      const script = document.createElement("script");
+      script.src = "https://utteranc.es/client.js";
+      script.async = true;
+      script.setAttribute("repo", "abdulrcs/joshuamcnabb.ca");
+      script.setAttribute("issue-term", title);
+      script.setAttribute("theme", "icy-dark");
+      script.crossOrigin = "anonymous";
 
-      script.onload = () => setInterval(() => setIsCommentsLoading(false), 1000)
+      script.onload = () =>
+        setInterval(() => setIsCommentsLoading(false), 1000);
 
-      scriptParentNode.appendChild(script)
-      commentNodeRef.current = script
+      scriptParentNode.appendChild(script);
+      commentNodeRef.current = script;
 
-      hasLoaded = true
-    }
+      hasLoaded = true;
+    };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          injectScript()
+          injectScript();
         }
-      })
-    }
+      });
+    };
 
     const mutationCallback = (mutationsList, observer) => {
       for (let mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-          const scriptParentNode = document.getElementById(commentNodeId)
+        if (mutation.type === "childList") {
+          const scriptParentNode = document.getElementById(commentNodeId);
           if (scriptParentNode) {
             if (!intersectionObserver) {
-              intersectionObserver = new IntersectionObserver(observerCallback)
+              intersectionObserver = new IntersectionObserver(observerCallback);
             }
-            intersectionObserver.observe(scriptParentNode)
-            observer.disconnect()
+            intersectionObserver.observe(scriptParentNode);
+            observer.disconnect();
           }
         }
       }
-    }
+    };
 
     if (!mutationObserver) {
-      mutationObserver = new MutationObserver(mutationCallback)
+      mutationObserver = new MutationObserver(mutationCallback);
     }
 
-    mutationObserver.observe(document.body, { childList: true, subtree: true })
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     // Cleanup on unmount
     return () => {
       if (intersectionObserver) {
-        intersectionObserver.disconnect()
+        intersectionObserver.disconnect();
       }
       if (mutationObserver) {
-        mutationObserver.disconnect()
+        mutationObserver.disconnect();
       }
-      const scriptParentNode = document.getElementById(commentNodeId)
+      const scriptParentNode = document.getElementById(commentNodeId);
       if (
         scriptParentNode &&
         commentNodeRef.current &&
         commentNodeRef.current.parentNode === scriptParentNode
       ) {
-        scriptParentNode.removeChild(commentNodeRef.current)
+        scriptParentNode.removeChild(commentNodeRef.current);
       }
-      hasLoaded = false
-    }
-  }, [commentNodeId, title])
+      hasLoaded = false;
+    };
+  }, [commentNodeId, title]);
 
-  return { isCommentsLoading }
+  return { isCommentsLoading };
 }

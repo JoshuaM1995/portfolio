@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import { Stack, Heading, Text, Divider, Flex, Box } from '@chakra-ui/react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Container from '../../components/Container'
-import { FaSearch } from 'react-icons/fa'
-import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
-import useMediaQuery from '../../hook/useMediaQuery'
-import dateFormat from 'dateformat'
+import { useState } from "react";
+import { Stack, Heading, Text, Divider, Flex, Box } from "@chakra-ui/react";
+import Head from "next/head";
+import Link from "next/link";
+import Container from "../../components/Container";
+import { FaSearch } from "react-icons/fa";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
+import useMediaQuery from "../../hook/useMediaQuery";
+import dateFormat from "dateformat";
 
-import { GithubBlog } from '@rena.to/github-blog'
+import { GithubBlog } from "@rena.to/github-blog";
 
 export default function Index({ posts }) {
-  const [query, setQuery] = useState('')
-  const handleChange = (e) => setQuery(e.target.value)
-  const isLargerThan1024 = useMediaQuery(1024)
+  const [query, setQuery] = useState("");
+  const handleChange = (e) => setQuery(e.target.value);
+  const isLargerThan1024 = useMediaQuery(1024);
 
   return (
     <Container>
@@ -26,7 +26,7 @@ export default function Index({ posts }) {
         />
 
         <meta content="website" property="og:type" />
-        <meta content="https://abdulrahman.id/blog" property="og:url" />
+        <meta content="https://joshuamcnabb.ca/blog" property="og:url" />
         <meta content="Blog - Joshua McNabb" property="og:title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
@@ -38,7 +38,7 @@ export default function Index({ posts }) {
         />
 
         <meta content="summary_large_image" property="twitter:card" />
-        <meta content="https://abdulrahman.id/" property="twitter:url" />
+        <meta content="https://joshuamcnabb.ca/" property="twitter:url" />
         <meta content="Blog - Joshua McNabb" property="twitter:title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
@@ -53,13 +53,13 @@ export default function Index({ posts }) {
         as="main"
         alignItems="flex-start"
         justifyContent="center"
-        my={{ base: '15vh', md: '16vh' }}
+        my={{ base: "15vh", md: "16vh" }}
         spacing={5}
       >
-        <Heading color="displayColor" fontSize={{ base: '4xl', md: '6xl' }}>
+        <Heading color="displayColor" fontSize={{ base: "4xl", md: "6xl" }}>
           Blog
         </Heading>
-        <Text fontSize={{ base: '14px', md: '16px' }}>
+        <Text fontSize={{ base: "14px", md: "16px" }}>
           This is where I share my writings on programming, tutorials, and my
           experiences.
         </Text>
@@ -78,40 +78,40 @@ export default function Index({ posts }) {
         <Stack spacing={5}>
           {posts
             .filter((e) =>
-              e.post.title.toLowerCase().includes(query.toLowerCase()),
+              e.post.title.toLowerCase().includes(query.toLowerCase())
             )
             .map(({ post }) => (
               <Stack
                 key={post.frontmatter.slug}
                 alignItems="flex-start"
                 justifyContent="flex-start"
-                direction={isLargerThan1024 ? 'row' : 'column'}
+                direction={isLargerThan1024 ? "row" : "column"}
               >
                 <Text
-                  display={isLargerThan1024 ? 'block' : 'none'}
+                  display={isLargerThan1024 ? "block" : "none"}
                   w={100}
                   color="textSecondary"
                   textAlign="right"
                 >
-                  {dateFormat(Date.parse(post.frontmatter.date), 'mmm d yyyy')}
-                  <br />{' '}
+                  {dateFormat(Date.parse(post.frontmatter.date), "mmm d yyyy")}
+                  <br />{" "}
                   <Text fontSize="sm" textAlign="right">
                     {post.frontmatter.readingTime}
                   </Text>
                 </Text>
                 <Text
-                  display={isLargerThan1024 ? 'none' : 'block'}
+                  display={isLargerThan1024 ? "none" : "block"}
                   color="textSecondary"
                   fontSize="sm"
                 >
-                  {dateFormat(Date.parse(post.frontmatter.date), 'mmm d yyyy')}{' '}
+                  {dateFormat(Date.parse(post.frontmatter.date), "mmm d yyyy")}{" "}
                   <Box as="span" fontSize="xs">
                     &bull;
-                  </Box>{' '}
+                  </Box>{" "}
                   {post.frontmatter.readingTime}
                 </Text>
                 <Flex direction="column" px={isLargerThan1024 ? 10 : 0}>
-                  <Link href={'/blog/' + post.frontmatter.slug}>
+                  <Link href={"/blog/" + post.frontmatter.slug}>
                     <Text
                       color="displayColor"
                       fontSize="xl"
@@ -134,30 +134,30 @@ export default function Index({ posts }) {
         </Stack>
       </Stack>
     </Container>
-  )
+  );
 }
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: "abdulrcs/joshuamcnabb.ca",
     token: process.env.GITHUB_TOKEN,
-  })
+  });
   const posts = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
-      type: 'post',
-      state: 'published',
+      author: "abdulrcs",
+      type: "post",
+      state: "published",
     },
     pager: { limit: 10, offset: 0 },
-  })
+  });
 
   return {
     props: {
       posts: posts.edges.sort(
         (a, b) =>
           Date.parse(b.post.frontmatter.date) -
-          Date.parse(a.post.frontmatter.date),
+          Date.parse(a.post.frontmatter.date)
       ),
     },
-  }
+  };
 }

@@ -1,37 +1,37 @@
-import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { ArticleJsonLd, NextSeo } from "next-seo";
 
-import React from 'react'
+import React from "react";
 
 const NextSeoData = ({ slug, metadata, publishedDate }) => {
   return (
     <>
       <NextSeo
         additionalMetaTags={[
-          { property: 'twitter:card', content: 'summary_large_image' },
+          { property: "twitter:card", content: "summary_large_image" },
           {
-            property: 'twitter:url',
-            content: `https://abdulrahman.id/blog/${slug}`,
+            property: "twitter:url",
+            content: `https://joshuamcnabb.ca/blog/${slug}`,
           },
-          { property: 'twitter:title', content: metadata.title },
+          { property: "twitter:title", content: metadata.title },
           {
-            property: 'twitter:description',
+            property: "twitter:description",
             content: metadata.frontmatter.summary,
           },
-          { property: 'twitter:image', content: metadata.frontmatter.image },
+          { property: "twitter:image", content: metadata.frontmatter.image },
         ]}
-        canonical={`https://abdulrahman.id/blog/${slug}`}
+        canonical={`https://joshuamcnabb.ca/blog/${slug}`}
         description={metadata.frontmatter.summary}
         openGraph={{
-          url: `https://abdulrahman.id/blog/${slug}`,
-          site_name: 'Joshua McNabb',
+          url: `https://joshuamcnabb.ca/blog/${slug}`,
+          site_name: "Joshua McNabb",
           title: metadata.title,
           description: metadata.frontmatter.summary,
-          type: 'article',
+          type: "article",
           article: {
-            authors: ['Joshua McNabb'],
+            authors: ["Joshua McNabb"],
             publishedTime: publishedDate,
             modifiedTime: publishedDate,
-            tags: ['Programming', 'Web Development', 'Software Engineering'],
+            tags: ["Programming", "Web Development", "Software Engineering"],
           },
           images: [
             {
@@ -51,10 +51,10 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
         publisherLogo="https://imagizer.imageshack.com/a/img923/7612/A5tDeP.png"
         publisherName="Joshua McNabb"
         title={metadata.title}
-        url={`https://abdulrahman.id/blog/${slug}`}
+        url={`https://joshuamcnabb.ca/blog/${slug}`}
       />
     </>
-  )
-}
+  );
+};
 
-export default NextSeoData
+export default NextSeoData;

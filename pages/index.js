@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import { Stack } from '@chakra-ui/react'
-import Container from '../components/Container'
-import Introduction from '../components/Introduction'
-import FeaturedProjects from '../components/FeaturedProjects'
-import LatestArticle from '../components/LatestArticle'
-import AboutMe from '../components/AboutMe'
-import ContactMe from '../components/ContactMe'
+import Head from "next/head";
+import { Stack } from "@chakra-ui/react";
+import Container from "../components/Container";
+import Introduction from "../components/Introduction";
+import FeaturedProjects from "../components/FeaturedProjects";
+import LatestArticle from "../components/LatestArticle";
+import AboutMe from "../components/AboutMe";
+import ContactMe from "../components/ContactMe";
 
-import { GithubBlog } from '@rena.to/github-blog'
+import { GithubBlog } from "@rena.to/github-blog";
 
 export default function Index({ introduction, projects, articles, contactMe }) {
   return (
@@ -23,7 +23,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           />
 
           <meta content="website" property="og:type" />
-          <meta content="https://abdulrahman.id" property="og:url" />
+          <meta content="https://joshuamcnabb.ca" property="og:url" />
           <meta
             content="Joshua McNabb - Software Engineer"
             property="og:title"
@@ -38,7 +38,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           />
 
           <meta content="summary_large_image" property="twitter:card" />
-          <meta content="https://abdulrahman.id/" property="twitter:url" />
+          <meta content="https://joshuamcnabb.ca/" property="twitter:url" />
           <meta
             content="Joshua McNabb - Software Engineer"
             property="twitter:title"
@@ -57,9 +57,9 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           as="main"
           alignItems="flex-start"
           justifyContent="center"
-          mt={{ base: '15vh', md: '20vh' }}
+          mt={{ base: "15vh", md: "20vh" }}
           pb="144px"
-          spacing={{ base: '100px', md: '144px' }}
+          spacing={{ base: "100px", md: "144px" }}
         >
           <Introduction introduction={introduction} />
           <AboutMe />
@@ -69,44 +69,44 @@ export default function Index({ introduction, projects, articles, contactMe }) {
         </Stack>
       </Container>
     </>
-  )
+  );
 }
 
-let client = require('contentful').createClient({
+let client = require("contentful").createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
+});
 
 export async function getStaticProps() {
   let data = await client.getEntries({
-    content_type: 'featuredProjects',
-    order: 'fields.order',
-  })
+    content_type: "featuredProjects",
+    order: "fields.order",
+  });
 
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: "abdulrcs/joshuamcnabb.ca",
     token: process.env.GITHUB_TOKEN,
-  })
+  });
   let data2 = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
-      type: 'post',
-      state: 'published',
+      author: "abdulrcs",
+      type: "post",
+      state: "published",
     },
     pager: { limit: 10, offset: 0 },
-  })
+  });
 
   let data3 = await client.getEntries({
-    content_type: 'introduction',
+    content_type: "introduction",
     limit: 2,
-    order: 'sys.createdAt',
-  })
+    order: "sys.createdAt",
+  });
 
   let data4 = await client.getEntries({
-    content_type: 'contactMe',
+    content_type: "contactMe",
     limit: 1,
-    order: 'sys.createdAt',
-  })
+    order: "sys.createdAt",
+  });
 
   return {
     props: {
@@ -115,12 +115,12 @@ export async function getStaticProps() {
         .sort(
           (a, b) =>
             Date.parse(b.post.frontmatter.date) -
-            Date.parse(a.post.frontmatter.date),
+            Date.parse(a.post.frontmatter.date)
         )
         .map((edge) => edge.post)
         .slice(0, 4),
       introduction: data3.items,
       contactMe: data4.items,
     },
-  }
+  };
 }
