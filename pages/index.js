@@ -22,29 +22,33 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             name="description"
           />
 
-          <meta content="website" property="og:type" />
-          <meta content="https://joshuamcnabb.ca" property="og:url" />
-          <meta
-            content="Joshua McNabb - Software Engineer"
-            property="og:title"
-          />
-          <meta
-            content="Software Engineer based in Canada."
-            property="og:description"
-          />
-          <meta content="/images/social.png" property="og:image" />
+          <meta property="og:url" content="https://joshuamcnabb.ca" />
+          <meta property="og:type" content="website" />
 
-          <meta content="summary_large_image" property="twitter:card" />
-          <meta content="https://joshuamcnabb.ca/" property="twitter:url" />
+          {/* Facebook meta tags */}
           <meta
+            property="og:title"
             content="Joshua McNabb - Software Engineer"
-            property="twitter:title"
           />
           <meta
+            property="og:description"
             content="Software Engineer based in Canada."
-            property="twitter:description"
           />
-          <meta content="/images/social.png" property="twitter:image" />
+          <meta property="og:image" content="/images/social.png" />
+
+          {/* Twitter meta tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="joshuamcnabb.ca" />
+          <meta property="twitter:url" content="https://joshuamcnabb.ca" />
+          <meta
+            name="twitter:title"
+            content="Joshua McNabb - Software Engineer"
+          />
+          <meta
+            name="twitter:description"
+            content="Software Engineer based in Canada."
+          />
+          <meta name="twitter:image" content="/images/social.png" />
         </Head>
 
         <Stack
