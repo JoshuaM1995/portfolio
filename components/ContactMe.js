@@ -39,7 +39,7 @@ export default function ContactMe({ contactMe }) {
       <SlideUpWhenVisible>
         <Stack isInline spacing={4}>
           <Link
-            href="https://www.linkedin.com/in/jmcnabb1995/"
+            href="https://www.linkedin.com/in/jmcnabb1995"
             isExternal
             onClick={() => handleClick("contact_linkedin")}
           >
