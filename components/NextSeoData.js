@@ -23,12 +23,12 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
         description={metadata.frontmatter.summary}
         openGraph={{
           url: `https://abdulrahman.id/blog/${slug}`,
-          site_name: 'Abdul Rahman',
+          site_name: 'Joshua McNabb',
           title: metadata.title,
           description: metadata.frontmatter.summary,
           type: 'article',
           article: {
-            authors: ['Abdul Rahman'],
+            authors: ['Joshua McNabb'],
             publishedTime: publishedDate,
             modifiedTime: publishedDate,
             tags: ['Programming', 'Web Development', 'Software Engineering'],
@@ -43,13 +43,13 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
         title={metadata.title}
       />
       <ArticleJsonLd
-        authorName="Abdul Rahman"
+        authorName="Joshua McNabb"
         dateModified={publishedDate}
         datePublished={publishedDate}
         description={metadata.frontmatter.summary}
         images={[metadata.frontmatter.image]}
         publisherLogo="https://imagizer.imageshack.com/a/img923/7612/A5tDeP.png"
-        publisherName="Abdul Rahman"
+        publisherName="Joshua McNabb"
         title={metadata.title}
         url={`https://abdulrahman.id/blog/${slug}`}
       />

@@ -62,7 +62,7 @@ export default function Introduction({ introduction }) {
           lineHeight={'95%'}
           letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
         >
-          Abdul Rahman.
+          Joshua McNabb.
         </Heading>
       </SlideFade>
 

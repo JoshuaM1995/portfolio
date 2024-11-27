@@ -70,7 +70,7 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              Hey! I'm Abdul Rahman, I've been close to a computer since an
+              Hey! I'm Joshua McNabb, I've been close to a computer since an
               early age, and been passionate about it ever since. <br />
               <br /> I really liked to build stuff using{' '}
               <MoreInfo
@@ -147,7 +147,7 @@ export default function AboutMe() {
                 h={{ base: '300px', lg: '350px' }}
                 objectFit="cover"
                 borderRadius="50%"
-                alt="Abdul Rahman"
+                alt="Joshua McNabb"
                 src="https://i.imgur.com/jk8NmSx.jpeg"
               />
             </Box>

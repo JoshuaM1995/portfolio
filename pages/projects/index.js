@@ -18,8 +18,8 @@ export default function Projects({ projects }) {
     <>
       <Container>
         <Head>
-          <title>Abdul Rahman - Software Engineer</title>
-          <meta content="Abdul Rahman - Software Engineer" name="title" />
+          <title>Joshua McNabb - Software Engineer</title>
+          <meta content="Joshua McNabb - Software Engineer" name="title" />
           <meta
             content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
             name="description"
@@ -28,7 +28,7 @@ export default function Projects({ projects }) {
           <meta content="website" property="og:type" />
           <meta content="https://abdulrahman.id/projects" property="og:url" />
           <meta
-            content="Abdul Rahman - Software Engineer"
+            content="Joshua McNabb - Software Engineer"
             property="og:title"
           />
           <meta
@@ -46,7 +46,7 @@ export default function Projects({ projects }) {
             property="twitter:url"
           />
           <meta
-            content="Abdul Rahman - Software Engineer"
+            content="Joshua McNabb - Software Engineer"
             property="twitter:title"
           />
           <meta
