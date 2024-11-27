@@ -1,7 +1,7 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import customTheme from '../styles/theme'
-import { Global, css } from '@emotion/react'
-import { prismDarkTheme } from '../styles/prism'
+import { ChakraProvider } from "@chakra-ui/react";
+import customTheme from "../styles/theme";
+import { Global, css } from "@emotion/react";
+import { prismDarkTheme } from "../styles/prism";
 const GlobalStyle = ({ children }) => {
   return (
     <>
@@ -9,12 +9,12 @@ const GlobalStyle = ({ children }) => {
         styles={css`
           ${prismDarkTheme};
           ::selection {
-            background-color: #90cdf4;
-            color: #fefefe;
+            background-color: #b5ffe0;
+            color: #000;
           }
           ::-moz-selection {
-            background: #ffb7b7;
-            color: #fefefe;
+            background: #b5ffe0;
+            color: #000;
           }
           html {
             min-width: 356px;
@@ -40,8 +40,8 @@ const GlobalStyle = ({ children }) => {
       />
       {children}
     </>
-  )
-}
+  );
+};
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -50,6 +50,6 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </GlobalStyle>
     </ChakraProvider>
-  )
+  );
 }
-export default MyApp
+export default MyApp;
