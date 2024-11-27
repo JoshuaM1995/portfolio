@@ -14,12 +14,6 @@ export default class MyDocument extends NextDocument {
             rel="stylesheet preload prefetch"
           />
           <link
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
-            onload="this.onload=null;this.rel='stylesheet'"
-            rel="stylesheet preload prefetch"
-          />
-          <link
             rel="icon"
             type="image/png"
             href="/favicon-96x96.png"

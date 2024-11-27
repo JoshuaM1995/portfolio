@@ -1,25 +1,25 @@
-import { Heading } from '@chakra-ui/layout'
-import { Box, Flex, Link, Stack, Text, SimpleGrid } from '@chakra-ui/react'
-import dateFormat from 'dateformat'
-import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import NextLink from 'next/link'
+import { Heading } from "@chakra-ui/layout";
+import { Box, Flex, Link, Stack, Text, SimpleGrid } from "@chakra-ui/react";
+import dateFormat from "dateformat";
+import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import NextLink from "next/link";
 
 export default function LatestArticle({ articles }) {
   return (
     <Stack
-      display={articles.length < 2 ? 'none' : 'block'}
+      display={articles.length < 2 ? "none" : "block"}
       w="100%"
       h="auto"
       spacing={5}
     >
       <SlideUpWhenVisible>
         <Flex align="center" justify="space-between">
-          <Heading fontFamily="Ubuntu" fontSize={{ base: 'xl', md: '2xl' }}>
+          <Heading fontFamily="ubuntu" fontSize={{ base: "xl", md: "2xl" }}>
             📰 Latest Article.
           </Heading>
           <NextLink href="/projects">
             <Link>
-              <Text fontSize={{ base: 'sm', md: 'md' }}>
+              <Text fontSize={{ base: "sm", md: "md" }}>
                 View all articles &rarr;
               </Text>
             </Link>
@@ -31,27 +31,27 @@ export default function LatestArticle({ articles }) {
           <SlideUpWhenVisible key={index}>
             <Link
               w="100%"
-              _hover={{ textDecoration: 'none' }}
-              _focus={{ outline: 'none' }}
-              href={'/blog/' + article.frontmatter.slug}
+              _hover={{ textDecoration: "none" }}
+              _focus={{ outline: "none" }}
+              href={"/blog/" + article.frontmatter.slug}
             >
               <Stack
                 alignItems="flex"
                 justifyContent="space-between"
                 direction="column"
-                minH={{ base: 'auto', md: '130px' }}
+                minH={{ base: "auto", md: "130px" }}
                 p={5}
                 bg="secondary"
                 border="1px"
-                borderColor={{ base: '#333', md: 'borderColor' }}
+                borderColor={{ base: "#333", md: "borderColor" }}
                 borderRadius="10px"
-                _hover={{ bg: '#111' }}
+                _hover={{ bg: "#111" }}
                 transition="0.3s"
                 space={2}
               >
                 <Text
                   color="displayColor"
-                  fontSize={{ base: 'md', md: 'xl' }}
+                  fontSize={{ base: "md", md: "xl" }}
                   fontWeight="bold"
                   cursor="pointer"
                   noOfLines={2}
@@ -65,11 +65,11 @@ export default function LatestArticle({ articles }) {
                 <Text color="textSecondary" fontSize="sm">
                   {dateFormat(
                     Date.parse(article.frontmatter.date),
-                    'mmmm d yyyy',
-                  )}{' '}
+                    "mmmm d yyyy"
+                  )}{" "}
                   <Box as="span" fontSize="xs">
                     &bull;
-                  </Box>{' '}
+                  </Box>{" "}
                   {article.frontmatter.readingTime}
                 </Text>
               </Stack>
@@ -78,5 +78,5 @@ export default function LatestArticle({ articles }) {
         ))}
       </SimpleGrid>
     </Stack>
-  )
+  );
 }

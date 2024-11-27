@@ -33,7 +33,8 @@ export default function FeaturedProjects({ projects }) {
               >
                 <Heading
                   color="displayColor"
-                  fontFamily="Ubuntu"
+                  fontFamily="ubuntu"
+                  fontWeight="500"
                   fontSize={{ base: "xl", md: "2xl" }}
                 >
                   All Creative Works.

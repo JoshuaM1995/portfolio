@@ -20,6 +20,9 @@ importers:
       '@emotion/styled':
         specifier: ^11
         version: 11.13.5(@emotion/react@11.13.5(@types/react@17.0.83)(react@18.3.1))(@types/react@17.0.83)(react@18.3.1)
+      '@next/font':
+        specifier: ^14.2.15
+        version: 14.2.15(next@13.5.7(@babel/core@7.12.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@rena.to/github-blog':
         specifier: ^0.4.2
         version: 0.4.2
@@ -829,6 +832,11 @@ packages:
 
   '@next/eslint-plugin-next@13.5.7':
     resolution: {integrity: sha512-c4vuEOOXeib4js5gDq+zFqAAdRGXX6T0d+zFETiQkRwy7vyj5lBov1dW0Z09nDst2lvxo7VEcKrQMUBH5Vgx7Q==}
+
+  '@next/font@14.2.15':
+    resolution: {integrity: sha512-QopYhBmCDDrNDynbi+ZD1hDZXmQXVFo7TmAFp4DQgO/kogz1OLbQ92hPigJbj572eZ3GaaVxNIyYVn3/eAsehg==}
+    peerDependencies:
+      next: '*'
 
   '@next/swc-darwin-arm64@13.5.7':
     resolution: {integrity: sha512-7SxmxMex45FvKtRoP18eftrDCMyL6WQVYJSEE/s7A1AW/fCkznxjEShKet2iVVzf89gWp8HbXGaL4hCaseux6g==}
@@ -4115,6 +4123,10 @@ snapshots:
   '@next/eslint-plugin-next@13.5.7':
     dependencies:
       glob: 7.1.7
+
+  '@next/font@14.2.15(next@13.5.7(@babel/core@7.12.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+    dependencies:
+      next: 13.5.7(@babel/core@7.12.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   '@next/swc-darwin-arm64@13.5.7':
     optional: true

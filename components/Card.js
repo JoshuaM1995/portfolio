@@ -119,7 +119,7 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
           </Center>
           <Stack px={4} py={2}>
             <Stack alignItems="center" justifyContent="space-between" isInline>
-              <Text color="displayColor" fontFamily="Ubuntu" fontSize="2xl">
+              <Text color="displayColor" fontFamily="ubuntu" fontSize="2xl">
                 {title}
               </Text>
               <Stack

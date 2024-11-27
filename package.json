@@ -15,6 +15,7 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@next/font": "^14.2.15",
     "@rena.to/github-blog": "^0.4.2",
     "contentful": "^8.3.7",
     "cors": "^2.8.5",
