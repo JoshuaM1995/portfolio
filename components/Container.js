@@ -1,25 +1,25 @@
-import { Box, Flex, Stack, Text, chakra } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
-import ReactGA from 'react-ga4'
-import Navbar from './Navbar'
+import { Box, Flex, Stack, Text, chakra } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
+import Navbar from "./Navbar";
 
 const Container = ({ enableTransition, children }) => {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE)
-  }, [])
+    ReactGA.initialize(process.env.NEXT_PUBLIC_MEASUREMENT_ID);
+  }, []);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   // fix hydration mismatch from using useMediaQuery hooks
   if (mounted)
     return (
       <Box
-        w={{ base: '100%', md: '70rem' }}
-        mx={{ base: '0', md: 'auto' }}
-        px={{ base: '22px', lg: 0 }}
+        w={{ base: "100%", md: "70rem" }}
+        mx={{ base: "0", md: "auto" }}
+        px={{ base: "22px", lg: 0 }}
         py={4}
         transition="0.4s"
       >
@@ -31,15 +31,15 @@ const Container = ({ enableTransition, children }) => {
           <Text fontSize="sm" textAlign="center">
             Designed and Developed by Joshua McNabb.
             <br />
-            Built with{' '}
+            Built with{" "}
             <chakra.span color="button1" fontWeight="semibold">
               Next.js
-            </chakra.span>{' '}
-            &{' '}
+            </chakra.span>{" "}
+            &{" "}
             <chakra.span color="button1" fontWeight="semibold">
               Chakra UI
             </chakra.span>
-            . Hosted on{' '}
+            . Hosted on{" "}
             <chakra.span color="button1" fontWeight="semibold">
               Vercel
             </chakra.span>
@@ -47,7 +47,7 @@ const Container = ({ enableTransition, children }) => {
           </Text>
         </Stack>
       </Box>
-    )
-}
+    );
+};
 
-export default Container
+export default Container;
