@@ -12,24 +12,24 @@ import {
   PopoverContent,
   PopoverBody,
   PopoverArrow,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 
-import useMediaQuery from '../hook/useMediaQuery'
-import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import ReactGA from 'react-ga4'
+import useMediaQuery from "../hook/useMediaQuery";
+import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import ReactGA from "react-ga4";
 
 export default function AboutMe() {
-  const isLargerThan800 = useMediaQuery(800)
+  const isLargerThan800 = useMediaQuery(800);
   const handleHover = (event) => {
     ReactGA.event({
-      category: 'hover',
+      category: "hover",
       action: event,
-    })
-  }
+    });
+  };
   const MoreInfo = ({ text, content }) => {
     return (
       <>
-        {' '}
+        {" "}
         {isLargerThan800 ? (
           <Popover isLazy placement="right" trigger="hover">
             <PopoverTrigger>
@@ -52,10 +52,10 @@ export default function AboutMe() {
           <Text as="span" color="button1">
             {text}
           </Text>
-        )}{' '}
+        )}{" "}
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -67,19 +67,19 @@ export default function AboutMe() {
             </Heading>
             <Text
               color="textSecondary"
-              fontSize={{ base: '14px', md: '16px' }}
+              fontSize={{ base: "14px", md: "16px" }}
               whiteSpace="pre-line"
             >
               Hey! I'm Joshua McNabb, I've been close to a computer since an
               early age, and been passionate about it ever since. <br />
-              <br /> I really liked to build stuff using{' '}
+              <br /> I really liked to build stuff using{" "}
               <MoreInfo
                 content="I used to make games without code using RPG Maker VX, and build a simple website with blogspot back in primary school."
                 text="no-code tools"
               />
               back in 2010, and from that, I explored how to code myself,
               fast-forward to today, I do programming in various languages and
-              technologies, and had the privilege to worked in a{' '}
+              technologies, and had the privilege to worked in a{" "}
               <MoreInfo
                 content={
                   <Image
@@ -129,24 +129,24 @@ export default function AboutMe() {
           <Flex align="center" justify="center">
             <Box
               pos="relative"
-              maxW={{ base: '300px', lg: '350px' }}
-              maxH={{ base: '300px', lg: '350px' }}
+              maxW={{ base: "300px", lg: "350px" }}
+              maxH={{ base: "300px", lg: "350px" }}
             >
               <Image
                 pos="absolute"
                 zIndex={3}
                 top="0px"
-                right={{ base: '-32px', lg: '-64px' }}
-                w={{ base: '100px', lg: '150px' }}
+                right={{ base: "-32px", lg: "-64px" }}
+                w={{ base: "100px", lg: "150px" }}
                 alt=""
                 filter="invert(0.1)"
                 src="https://svgsilh.com/svg/26432.svg"
               />
               <Image
-                w={{ base: '300px', lg: '350px' }}
-                h={{ base: '300px', lg: '350px' }}
-                objectFit="cover"
+                w={{ base: "300px", lg: "350px" }}
+                h={{ base: "300px", lg: "350px" }}
                 borderRadius="50%"
+                objectFit="cover"
                 alt="Joshua McNabb"
                 src="https://i.imgur.com/jk8NmSx.jpeg"
               />
@@ -155,5 +155,5 @@ export default function AboutMe() {
         </SlideUpWhenVisible>
       </SimpleGrid>
     </>
-  )
+  );
 }
