@@ -38,7 +38,7 @@ export default function FeaturedProjects({ projects }) {
                 >
                   All Creative Works.
                 </Heading>
-                <NextLink passHref href="/projects">
+                {/* <NextLink passHref href="/projects">
                   <Link
                     onClick={() => handleClick("featuredprojects_explore more")}
                   >
@@ -52,12 +52,12 @@ export default function FeaturedProjects({ projects }) {
                       Explore more &rarr;
                     </Text>
                   </Link>
-                </NextLink>
+                </NextLink> */}
               </Stack>
               <Text color="textSecondary" fontSize={{ base: "md", md: "xl" }}>
                 Here's some of my projects that I have worked on.
               </Text>
-              <NextLink href="/projects">
+              {/* <NextLink href="/projects">
                 <Link
                   onClick={() => handleClick("featuredprojects_explore more")}
                 >
@@ -68,7 +68,7 @@ export default function FeaturedProjects({ projects }) {
                     Explore more &rarr;
                   </Text>
                 </Link>
-              </NextLink>
+              </NextLink> */}
             </Stack>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
