@@ -32,10 +32,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             content="Software Engineer based in Canada."
             property="og:description"
           />
-          <meta
-            content="https://imagizer.imageshack.com/a/img922/7423/0P3Xty.png"
-            property="og:image"
-          />
+          <meta content="/images/social.png" property="og:image" />
 
           <meta content="summary_large_image" property="twitter:card" />
           <meta content="https://joshuamcnabb.ca/" property="twitter:url" />
@@ -47,10 +44,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             content="Software Engineer based in Canada."
             property="twitter:description"
           />
-          <meta
-            content="https://imagizer.imageshack.com/a/img922/7423/0P3Xty.png"
-            property="twitter:image"
-          />
+          <meta content="/images/social.png" property="twitter:image" />
         </Head>
 
         <Stack
