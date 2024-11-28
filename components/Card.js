@@ -29,6 +29,8 @@ import useMediaQuery from "../hook/useMediaQuery";
 import Image from "next/image";
 
 export default function Cards({ imageURL, title, slug, desc, tag }) {
+  const isLargerThan800 = useMediaQuery(800);
+
   const getTag = (tag) => {
     let values = ["gray", FaCode];
 
@@ -73,8 +75,6 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
     return values;
   };
 
-  const isLargerThan800 = useMediaQuery(800);
-
   const Tags = tag.map((item) => (
     <Tag
       key={item}
@@ -110,6 +110,7 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
             <Image
               width={800}
               height={400}
+              sizes="100vw"
               minH="270px"
               borderRadius="10px 10px 0px 0px"
               transition="0.3s"
@@ -117,6 +118,8 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
               style={{
                 borderRadius: "10px 10px 0px 0px",
                 objectFit: "cover",
+                width: "100%",
+                height: "auto",
               }}
               alt={title}
               src={imageURL}
