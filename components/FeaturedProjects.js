@@ -17,7 +17,7 @@ export default function FeaturedProjects({ projects }) {
   return (
     <>
       <Stack spacing={8} w="full">
-        <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
+        <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={{ base: 8, md: 16 }}>
           <SlideUpWhenVisible threshold={0.1}>
             <Stack spacing={1}>
               <Stack
@@ -67,13 +67,15 @@ export default function FeaturedProjects({ projects }) {
             </Stack>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
-            <Cards
-              slug={projects[0].fields.slug}
-              desc={projects[0].fields.description}
-              imageURL={`https:${projects[0].fields.image.fields.file.url}`}
-              tag={projects[0].fields.tags}
-              title={projects[0].fields.title}
-            />
+            <Box>
+              <Cards
+                slug={projects[0].fields.slug}
+                desc={projects[0].fields.description}
+                imageURL={`https:${projects[0].fields.image.fields.file.url}`}
+                tag={projects[0].fields.tags}
+                title={projects[0].fields.title}
+              />
+            </Box>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
             <Box mt={{ md: "-90%" }}>

@@ -33,7 +33,7 @@ export default function Introduction({ introduction: introductions }) {
         transition={{ enter: { duration: 0.4, delay: 0.7 } }}
         in={true}
       >
-        <Box pos="relative">
+        <Box pos="relative" mt={{ base: 4, md: 0 }}>
           <Image
             pos="absolute"
             zIndex={0}

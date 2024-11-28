@@ -23,7 +23,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           justifyContent="center"
           mt={{ base: "10vh", md: "15vh" }}
           pb="144px"
-          spacing={{ base: "100px", md: "144px" }}
+          spacing={{ base: "80px", md: "144px" }}
         >
           <Introduction introduction={introduction} />
           <AboutMe />

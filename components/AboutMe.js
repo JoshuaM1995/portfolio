@@ -149,13 +149,14 @@ export default function AboutMe() {
           <Flex align="center" justify="center">
             <Box
               pos="relative"
+              top={{ base: 6, md: 0 }}
               maxW={{ base: "300px", lg: "350px" }}
               maxH={{ base: "300px", lg: "350px" }}
             >
               <Image
                 pos="absolute"
                 zIndex={3}
-                top="0px"
+                top="12px"
                 right={{ base: "-32px", lg: "-64px" }}
                 w={{ base: "100px", lg: "150px" }}
                 alt=""
