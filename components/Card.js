@@ -22,6 +22,7 @@ import {
   FaPython,
   FaReact,
   FaSass,
+  FaNodeJs,
 } from "react-icons/fa";
 import { SiChakraui, SiNextdotjs } from "react-icons/si";
 import useMediaQuery from "../hook/useMediaQuery";
@@ -29,41 +30,46 @@ import Image from "next/image";
 
 export default function Cards({ imageURL, title, slug, desc, tag }) {
   const getTag = (tag) => {
-    let values = [];
-    if (tag == "React") {
-      values[0] = "blue";
-      values[1] = FaReact;
-    } else if (tag == "Python") {
-      values[0] = "orange";
-      values[1] = FaPython;
-    } else if (tag == "Javascript") {
-      values[0] = "yellow";
-      values[1] = FaJs;
-    } else if (tag == "Sass") {
-      values[0] = "pink";
-      values[1] = FaSass;
-    } else if (tag == "Flask") {
-      values[0] = "green";
-      values[1] = FaPepperHot;
-    } else if (tag == "Laravel") {
-      values[0] = "red";
-      values[1] = FaLaravel;
-    } else if (tag == "Bootstrap") {
-      values[0] = "purple";
-      values[1] = FaBootstrap;
-    } else if (tag == "SQL") {
-      values[0] = "blue";
-      values[1] = FaDatabase;
-    } else if (tag == "Next.js") {
-      values[0] = "gray";
-      values[1] = SiNextdotjs;
-    } else if (tag == "Chakra UI") {
-      values[0] = "teal";
-      values[1] = SiChakraui;
-    } else {
-      values[0] = "gray";
-      values[1] = FaCode;
+    let values = ["gray", FaCode];
+
+    switch (tag) {
+      case "React":
+        values = ["blue", FaReact];
+        break;
+      case "Node.JS":
+        values = ["green", FaNodeJs];
+        break;
+      case "Python":
+        values = ["orange", FaPython];
+        break;
+      case "Javascript":
+        values = ["yellow", FaJs];
+        break;
+      case "Sass":
+        values = ["pink", FaSass];
+        break;
+      case "Flask":
+        values = ["green", FaPepperHot];
+        break;
+      case "Laravel":
+        values = ["red", FaLaravel];
+        break;
+      case "Bootstrap":
+        values = ["purple", FaBootstrap];
+        break;
+      case "SQL":
+        values = ["blue", FaDatabase];
+        break;
+      case "Next.js":
+        values = ["gray", SiNextdotjs];
+        break;
+      case "Chakra UI":
+        values = ["teal", SiChakraui];
+        break;
+      default:
+        values = ["gray", FaCode];
     }
+
     return values;
   };
 
