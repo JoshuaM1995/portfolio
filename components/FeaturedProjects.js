@@ -1,18 +1,12 @@
-import {
-  Link,
-  Stack,
-  Heading,
-  Text,
-  SimpleGrid,
-  Flex,
-  Box,
-} from "@chakra-ui/layout";
-import NextLink from "next/link";
-import Cards from "./Card";
-import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/layout";
+import { useMediaQuery } from "@chakra-ui/react";
 import ReactGA from "react-ga4";
+import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import Cards from "./Card";
 
 export default function FeaturedProjects({ projects }) {
+  const isLargerThan800 = useMediaQuery(800);
+
   const handleClick = (event) => {
     ReactGA.event({
       category: "click",
@@ -92,7 +86,10 @@ export default function FeaturedProjects({ projects }) {
               />
             </Box>
           </SlideUpWhenVisible>
-          <Box visibility="hidden">
+          <Box
+            visibility={isLargerThan800 ? "visible" : "hidden"}
+            display={isLargerThan800 ? "none" : "block"}
+          >
             <SlideUpWhenVisible threshold={0.8}>
               <Cards
                 slug={projects[1].fields.slug}
