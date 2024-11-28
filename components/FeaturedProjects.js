@@ -76,7 +76,7 @@ export default function FeaturedProjects({ projects }) {
             <Cards
               slug={projects[0].fields.slug}
               desc={projects[0].fields.description}
-              imageURL={projects[0].fields.imageUrl}
+              imageURL={`https:${projects[0].fields.image.fields.file.url}`}
               tag={projects[0].fields.tags}
               title={projects[0].fields.title}
             />

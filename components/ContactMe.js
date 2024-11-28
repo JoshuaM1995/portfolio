@@ -31,7 +31,6 @@ export default function ContactMe({ contactMe }) {
             {" "}
             {contactMe[0].fields.highlightText}
           </chakra.span>
-          .
           <br />
           {contactMe[0].fields.description}
         </Text>
