@@ -81,8 +81,19 @@ export default function FeaturedProjects({ projects }) {
               title={projects[0].fields.title}
             />
           </SlideUpWhenVisible>
-          {/* <SlideUpWhenVisible>
+          <SlideUpWhenVisible>
             <Box mt={{ md: "-50%" }}>
+              <Cards
+                slug={projects[1].fields.slug}
+                desc={projects[1].fields.description}
+                imageURL={`https:${projects[1].fields.image.fields.file.url}`}
+                tag={projects[1].fields.tags}
+                title={projects[1].fields.title}
+              />
+            </Box>
+          </SlideUpWhenVisible>
+          <Box visibility="hidden">
+            <SlideUpWhenVisible threshold={0.8}>
               <Cards
                 slug={projects[1].fields.slug}
                 desc={projects[1].fields.description}
@@ -90,17 +101,8 @@ export default function FeaturedProjects({ projects }) {
                 tag={projects[1].fields.tags}
                 title={projects[1].fields.title}
               />
-            </Box>
-          </SlideUpWhenVisible>
-          <SlideUpWhenVisible threshold={0.8}>
-            <Cards
-              slug={projects[2].fields.slug}
-              desc={projects[2].fields.description}
-              imageURL={projects[2].fields.imageUrl}
-              tag={projects[2].fields.tags}
-              title={projects[2].fields.title}
-            />
-          </SlideUpWhenVisible> */}
+            </SlideUpWhenVisible>
+          </Box>
         </SimpleGrid>
       </Stack>
     </>
