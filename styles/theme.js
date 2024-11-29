@@ -1,7 +1,7 @@
 import { theme as chakraTheme } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
-import { Ubuntu } from '@next/font/google'
+import { Ubuntu } from 'next/font/google'
 
 // Fluid Typography.
 // font-size  = calc(ZZ + ((1vw - XX) * YY))

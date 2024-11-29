@@ -19,7 +19,7 @@ export default function useUtterances(commentNodeId, title) {
       script.async = true;
       script.setAttribute("repo", "JoshuaM1995/portfolio");
       script.setAttribute("issue-term", title);
-      script.setAttribute("theme", "icy-dark");
+      script.setAttribute("theme", "github-dark");
       script.crossOrigin = "anonymous";
 
       script.onload = () =>

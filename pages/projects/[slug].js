@@ -9,27 +9,21 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { GithubBlog } from "@rena.to/github-blog";
+import mdxPrism from "mdx-prism";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { useEffect, useState } from "react";
-
-import ReactGA from "react-ga4";
-
-import mdxPrism from "mdx-prism";
-
-import readingTime from "reading-time";
-
+import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
+import { FaGithub, FaLink, FaUser } from "react-icons/fa";
+import readingTime from "reading-time";
 import Container from "../../components/Container";
 import MDXComponents from "../../components/MDXComponents";
-import ProjectContainer from "../../components/ProjectContainer";
-
-import { GithubBlog } from "@rena.to/github-blog";
-
-import { FaGithub, FaLink, FaPersonBooth, FaUser } from "react-icons/fa";
 import NextSeoData from "../../components/NextSeoData";
+import ProjectContainer from "../../components/ProjectContainer";
 import useUtterances from "../../hook/useUtterances";
-import Image from "next/image";
 
 export default function Post({ metadata, publishedDate, source, toc }) {
   const [views, setViews] = useState("...");
@@ -238,7 +232,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.edges.map(({ post }) => ({
-      params: { slug: post.frontmatter.slug },
+      params: { slug: post.labels.slug[0] },
     })),
     fallback: false,
   };
@@ -252,7 +246,7 @@ export async function getStaticProps({ params }) {
   const data = await blog.getPost({
     query: {
       author: "JoshuaM1995",
-      search: params.slug,
+      slug: params.slug,
     },
   });
   const article = data.post;
