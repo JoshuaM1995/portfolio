@@ -40,11 +40,8 @@ jobs:
           version: 9
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-      - name: "list files"
-        run: ls -la
+      - name: Install dependencies
+        run: pnpm install
       - name: Run Next Build
         run: pnpm build
 
@@ -64,6 +61,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
       - name: Run ESLint
         run: pnpm lint
 
