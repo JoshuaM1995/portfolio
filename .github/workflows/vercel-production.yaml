@@ -5,7 +5,12 @@ env:
 
 on:
   push:
-    branches-ignore:
+    branches:
+      - main
+  pull_request:
+    types:
+      - closed
+    branches:
       - main
 
 jobs:
