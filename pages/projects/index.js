@@ -7,6 +7,7 @@ import Head from "next/head";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { FaSearch } from "react-icons/fa";
 import { GithubBlog } from "@rena.to/github-blog";
+import { SeoMeta } from "../../components/SeoMeta";
 
 export default function Projects({ projects }) {
   const [query, setQuery] = useState("");
@@ -19,44 +20,8 @@ export default function Projects({ projects }) {
       <Container>
         <Head>
           <title>Joshua McNabb - Software Engineer</title>
-          <meta content="Joshua McNabb - Software Engineer" name="title" />
-          <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
-            name="description"
-          />
 
-          <meta content="website" property="og:type" />
-          <meta content="https://joshuamcnabb.ca/projects" property="og:url" />
-          <meta
-            content="Joshua McNabb - Software Engineer"
-            property="og:title"
-          />
-          <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
-            property="og:description"
-          />
-          <meta
-            content="https://imagizer.imageshack.com/a/img923/3917/IFUVhm.png"
-            property="og:image"
-          />
-
-          <meta content="summary_large_image" property="twitter:card" />
-          <meta
-            content="https://joshuamcnabb.ca/projects"
-            property="twitter:url"
-          />
-          <meta
-            content="Joshua McNabb - Software Engineer"
-            property="twitter:title"
-          />
-          <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
-            property="twitter:description"
-          />
-          <meta
-            content="https://imagizer.imageshack.com/a/img923/3917/IFUVhm.png"
-            property="twitter:image"
-          />
+          <SeoMeta />
         </Head>
         <Stack
           justifyContent="center"
