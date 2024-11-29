@@ -17,18 +17,28 @@ jobs:
   Install-Dependencies:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v4
         with:
           version: 9
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
 
   Build:
     needs: Install-Dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          version: 9
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
       - name: Run Next Build
         run: pnpm build
 
@@ -37,9 +47,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          version: 9
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
       - name: Run ESLint
         run: pnpm lint
 
