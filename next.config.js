@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["joshuamcnabb.ca"],
+    domains: ["joshuamcnabb.ca", "github.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -9,6 +9,10 @@ module.exports = {
       {
         protocol: "https",
         hostname: "images.ctfassets.net",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com/user-attachments/assets",
       },
     ],
   },

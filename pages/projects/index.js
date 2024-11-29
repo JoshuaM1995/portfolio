@@ -25,7 +25,7 @@ export default function Projects({ projects }) {
         </Head>
         <Stack
           justifyContent="center"
-          my={{ base: "15vh", md: "16vh" }}
+          my={{ base: "9vh", md: "10vh" }}
           spacing={10}
         >
           <Stack spacing={5}>

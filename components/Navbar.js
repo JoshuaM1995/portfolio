@@ -50,12 +50,12 @@ export default function Navbar({ enableTransition }) {
                   Home
                 </Button>
               </NextLink>
-              {/* <NextLink passHref href="/projects">
+              <NextLink passHref href="/projects">
                 <Button as="a" fontSize="16px" variant="ghost">
                   Projects
                 </Button>
               </NextLink>
-              <NextLink passHref href="/blog">
+              {/* <NextLink passHref href="/blog">
                 <Button as="a" fontSize="16px" variant="ghost">
                   Blog
                 </Button>
@@ -109,12 +109,12 @@ export default function Navbar({ enableTransition }) {
                   Home
                 </Button>
               </NextLink>
-              {/* <NextLink passHref href="/projects">
+              <NextLink passHref href="/projects">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
                   Projects
                 </Button>
               </NextLink>
-              <NextLink passHref href="/blog">
+              {/* <NextLink passHref href="/blog">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
                   Blog
                 </Button>
