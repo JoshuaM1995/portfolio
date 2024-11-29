@@ -1,4 +1,4 @@
-![](https://i.imgur.com/aUVHd1c.png)
+![](https://joshuamcnabb.ca/images/social.png)
 
 ---
 
