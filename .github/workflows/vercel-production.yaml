@@ -5,22 +5,17 @@ env:
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    types:
-      - closed
-    branches:
+    branches-ignore:
       - main
 
 jobs:
   Install-Dependencies:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: pnpm/action-setup@v4
         with:
           version: 9
@@ -35,6 +30,27 @@ jobs:
   Build:
     needs: Install-Dependencies
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Next Build
+        run: pnpm build
+
+  Lint:
+    needs: Install-Dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v4
@@ -45,19 +61,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-      - name: Run Next Build
-        run: pnpm build
-
-  Lint:
-    needs: Install-Dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
       - name: Run ESLint
         run: pnpm lint
 
