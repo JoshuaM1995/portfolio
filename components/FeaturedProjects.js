@@ -78,7 +78,7 @@ export default function FeaturedProjects({ projects }) {
             </Box>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
-            <Box mt={{ md: "-90%" }}>
+            <Box mt={{ md: "-75%" }}>
               <Cards
                 slug={projects[1].fields.slug}
                 desc={projects[1].fields.description}

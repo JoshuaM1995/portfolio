@@ -86,5 +86,6 @@ export async function getStaticProps() {
       introduction: data3.items,
       contactMe: data4.items,
     },
+    revalidate: 60,
   };
 }
