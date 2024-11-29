@@ -43,6 +43,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
+      - name: "list files"
+        run: ls -la
       - name: Run Next Build
         run: pnpm build
 
