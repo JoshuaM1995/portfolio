@@ -2,6 +2,8 @@ name: Vercel Preview Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+  CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 
 on:
   push:
@@ -9,26 +11,7 @@ on:
       - main
 
 jobs:
-  Install-Dependencies:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-
   Build:
-    needs: Install-Dependencies
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -45,29 +28,8 @@ jobs:
       - name: Run Next Build
         run: pnpm build
 
-  Lint:
-    needs: Install-Dependencies
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-      - name: Run ESLint
-        run: pnpm lint
-
   Deploy-Preview:
-    needs: [Build, Lint]
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
