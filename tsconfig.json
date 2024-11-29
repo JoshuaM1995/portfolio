@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -27,9 +23,8 @@
     "next-env.d.ts",
     "./components/**/*.js",
     "./pages/**/*.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "./app/**/*.js"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
